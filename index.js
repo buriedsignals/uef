@@ -201,7 +201,7 @@ function addMapPoints() {
     //find ID of collection item in array
     const description = `
       <div class="mapbox-header">
-        <div class="text-size-large text-weight-light">${ e.features[0].properties['Name'] }</div>
+        <div class="text-size-large text-weight-light mapbox-title">${ e.features[0].properties['Name'] }</div>
         ${ e.features[0].properties['Organization'] ? `<div class="mapbox-organisation">${ e.features[0].properties['Organization'] }</div>`: '' }
       </div>
       <div class="mapbox_content">
