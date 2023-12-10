@@ -25,16 +25,16 @@ let map = new mapboxgl.Map({
 	container: "map",
 	style: "mapbox://styles/buriedsignals/clpsju6cd017001qtapftbsnz",
 	center: [24.827817, -6.711618],
-	zoom: 3.12,
+	zoom: 1,
 });
 
 // Adjust zoom of map for mobile and desktop
-// let mq = window.matchMedia("(min-width: 480px)");
-// if (mq.matches) {
-// 	map.setZoom(6.59); //set map zoom level for desktop size
-// } else {
-// 	map.setZoom(6); //set map zoom level for mobile size
-// }
+let mq = window.matchMedia("(min-width: 600px)");
+if (mq.matches) {
+	map.setZoom(3.12); //set map zoom level for desktop size
+} else {
+	map.setZoom(2.12); //set map zoom level for mobile size
+}
 
 // Add zoom and rotation controls to the map.
 map.addControl(new mapboxgl.NavigationControl());
@@ -111,9 +111,16 @@ function addMapPoints() {
         $(".locations-map_item").removeClass("is--show");
       } 
 
+      let zoom = 1
+      if (mq.matches) {
+        zoom = 3.12
+      } else {
+        zoom = 2.12
+      }
+
       map.flyTo({
         center: [24.827817, -6.711618],
-        zoom: 3.12,
+        zoom: zoom,
         curve: 1,
         easing(t) {
           return t;
@@ -146,10 +153,17 @@ function addMapPoints() {
     const locationLat = document.querySelector(`#${ID} #locationLatitude`).value;
     const locationLong = document.querySelector(`#${ID} #locationLongitude`).value;
     const coordinates = [locationLong, locationLat];
+      
+    let zoom = 1
+    if (mq.matches) {
+      zoom = 5
+    } else {
+      zoom = 4
+    }
 
 		map.flyTo({
 			center: coordinates,
-      zoom: 5,
+      zoom: zoom,
 			curve: 1,
 			easing(t) {
 				return t;
