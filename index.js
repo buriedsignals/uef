@@ -194,6 +194,102 @@ function addMapPoints() {
     popupCountry.remove();
   });
 
+  map.on('click', 'uef', (e) => {
+    map.setLayoutProperty('uef', 'icon-image', 'marker_unselected');
+    map.getCanvas().style.cursor = '';
+    popupCountry.remove();
+
+    // Change the cursor style as a UI indicator.
+    map.getCanvas().style.cursor = 'pointer';
+    
+    //find ID of collection item in array
+    const description = `
+      <div class="mapbox-header">
+        <div class="text-size-large text-weight-light mapbox-title">${ e.features[0].properties['Name'] }</div>
+        ${ e.features[0].properties['Organization'] ? `<div class="mapbox-organisation">${ e.features[0].properties['Organization'] }</div>`: '' }
+      </div>
+      <div class="mapbox_content">
+        ${ e.features[0].properties['Customer Category'] ? `
+          <div class="mapbox_row">
+            <div class="icon-embed-xxsmall w-embed">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.0241 14.9998H2.90723M2.90723 7.46783L7.83033 3.52983C8.1526 3.27204 8.553 3.13159 8.96569 3.13159C9.37838 3.13159 9.77878 3.27204 10.101 3.52983L15.0241 7.46783" stroke="#DB4405" stroke-width="1.47506" stroke-linecap="round"/>
+                <path d="M11.0859 4.13571V2.92402C11.0859 2.84368 11.1179 2.76663 11.1747 2.70982C11.2315 2.65301 11.3085 2.62109 11.3889 2.62109H12.9035C12.9838 2.62109 13.0609 2.65301 13.1177 2.70982C13.1745 2.76663 13.2064 2.84368 13.2064 2.92402V5.95325" stroke="#DB4405" stroke-width="1.47506" stroke-linecap="round"/>
+                <path d="M4.11621 14.6863V6.8772M13.6607 14.6863V6.8772" stroke="#DB4405" stroke-width="1.47506" stroke-linecap="round"/>
+                <path d="M10.7835 14.9999V12.8383C10.7835 11.9816 10.7835 11.5533 10.5169 11.2873C10.2516 11.0208 9.82325 11.0208 8.96598 11.0208C8.10931 11.0208 7.68098 11.0208 7.41501 11.2873C7.14844 11.5527 7.14844 11.981 7.14844 12.8383V14.9999M10.1777 7.42678C10.1777 7.74814 10.05 8.05634 9.82277 8.28358C9.59553 8.51081 9.28734 8.63847 8.96598 8.63847C8.64461 8.63847 8.33642 8.51081 8.10918 8.28358C7.88194 8.05634 7.75428 7.74814 7.75428 7.42678C7.75428 7.10542 7.88194 6.79722 8.10918 6.56998C8.33642 6.34275 8.64461 6.21509 8.96598 6.21509C9.28734 6.21509 9.59553 6.34275 9.82277 6.56998C10.05 6.79722 10.1777 7.10542 10.1777 7.42678Z" stroke="#DB4405" stroke-width="1.47506"/>
+              </svg>
+            </div>
+            <div class="mapbox_label">Category: ${ e.features[0].properties['Customer Category'] }</div>
+          </div>
+        ` : ''}
+        ${ e.features[0].properties['Gender'] ? `
+          <div class="mapbox_row">
+            <div class="icon-embed-xxsmall w-embed">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.36321 10.3841C11.4024 10.3841 13.0555 8.73102 13.0555 6.69182C13.0555 4.65261 11.4024 2.99951 9.36321 2.99951C7.324 2.99951 5.6709 4.65261 5.6709 6.69182C5.6709 8.73102 7.324 10.3841 9.36321 10.3841ZM9.36321 10.3841V14.9995M12.1324 12.689H6.59398" stroke="#DB4405" stroke-width="1.75" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="mapbox_label">Gender: ${ e.features[0].properties['Gender'] }</div>
+          </div>
+        ` : ''}
+        ${ e.features[0].properties['SSPU Total Wattage'] ? `
+          <div class="mapbox_row">
+            <div class="icon-embed-xxsmall w-embed">
+              <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.6956 5.00003C15.229 5.53337 15.229 6.40003 14.6956 6.8667L13.1825 8.37981C12.9873 8.57507 12.6707 8.57507 12.4754 8.37981L7.98253 3.88692C7.78726 3.69166 7.78726 3.37507 7.98253 3.17981L9.49564 1.6667C10.029 1.13337 10.8956 1.13337 11.3623 1.6667L12.5623 2.8667L14.2088 1.22025C14.404 1.02499 14.7206 1.02499 14.9159 1.22025L15.1421 1.44648C15.3373 1.64174 15.3373 1.95832 15.1421 2.15359L13.4956 3.80003L14.6956 5.00003ZM10.829 8.8667L9.89564 7.93337L8.02897 9.80003L6.62897 8.40003L8.49564 6.53337L7.5623 5.60003L5.69564 7.4667L5.04878 6.86296C4.85181 6.67912 4.54459 6.68442 4.35407 6.87494L2.82897 8.40003C2.29564 8.93337 2.29564 9.80003 2.82897 10.2667L4.02897 11.4667L1.71586 13.7798C1.5206 13.9751 1.5206 14.2917 1.71586 14.4869L1.94208 14.7131C2.13735 14.9084 2.45393 14.9084 2.64919 14.7131L4.9623 12.4L6.1623 13.6C6.69564 14.1334 7.5623 14.1334 8.02897 13.6L9.54208 12.0869C9.73735 11.8917 9.73735 11.5751 9.54208 11.3798L8.96231 10.8L10.829 8.8667Z" fill="#DB4405"/>
+              </svg>
+            </div>
+            <div class="mapbox_label">Total Wattage: ${ e.features[0].properties['SSPU Total Wattage'] }</div>
+          </div>
+        ` : ''}
+        ${ e.features[0].properties['SSPU PUE Appliances'] ? `
+          <div class="mapbox_row">
+            <div class="icon-embed-xxsmall w-embed">
+              <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.40519 8.75H1.49219C1.35419 8.75 1.24219 8.862 1.24219 9C1.24219 11.0005 2.86669 12.625 4.86719 12.625C6.19769 12.625 7.36169 11.9065 7.99219 10.837V15.75C7.99219 15.888 8.10419 16 8.24219 16C10.2427 16 11.8672 14.3755 11.8672 12.375C11.8672 11.0445 11.1487 9.8805 10.0792 9.25H14.9922C15.1302 9.25 15.2422 9.138 15.2422 9C15.2422 6.9995 13.6177 5.375 11.6172 5.375C10.2867 5.375 9.12269 6.0935 8.49219 7.163V2.25C8.49219 2.112 8.38019 2 8.24219 2C6.24169 2 4.61719 3.6245 4.61719 5.625C4.61719 6.9555 5.33569 8.1195 6.40519 8.75ZM8.24219 7.375C7.34519 7.375 6.61719 8.103 6.61719 9C6.61719 9.897 7.34519 10.625 8.24219 10.625C9.13919 10.625 9.86719 9.897 9.86719 9C9.86719 8.103 9.13919 7.375 8.24219 7.375ZM8.24219 7.925C8.83569 7.925 9.31718 8.4065 9.31718 9C9.31718 9.5935 8.83569 10.075 8.24219 10.075C7.64869 10.075 7.16719 9.5935 7.16719 9C7.16719 8.4065 7.64869 7.925 8.24219 7.925Z" fill="#DB4405"/>
+              </svg>
+            </div>
+            <div class="mapbox_label">Appliances: ${ e.features[0].properties['SSPU PUE Appliances'] }</div>
+          </div>
+        ` : ''}
+        ${ e.features[0].properties['Previous Energy Source'] ? `
+          <div class="mapbox_row">
+            <div class="icon-embed-xxsmall w-embed">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.2422 9.93757C13.2422 12.1812 11.4743 14 9.29347 14C7.11265 14 5.34475 12.1812 5.34475 9.93757C5.34475 8.29383 7.46419 4.38615 8.59755 2.41402C8.9148 1.86199 9.67214 1.86199 9.98939 2.41402C11.1228 4.38615 13.2422 8.29383 13.2422 9.93757Z" fill="#DB4405"/>
+                <path d="M6.45175 4.5675C6.13086 3.96392 5.81135 3.4034 5.55987 2.97381C5.33318 2.58672 4.79222 2.58672 4.56553 2.97381C3.75601 4.35667 2.24219 7.09745 2.24219 8.24965C2.24219 9.67275 3.27481 10.8521 4.6242 11.0647C4.54212 10.7031 4.4986 10.3256 4.4986 9.93798C4.4986 9.3718 4.67268 8.70361 4.89606 8.05525C4.95721 7.8773 5.02441 7.6948 5.09658 7.50891C5.296 6.99487 5.5326 6.4559 5.78435 5.92032C5.99727 5.46693 6.22368 5.01126 6.45175 4.5675Z" fill="#DB4405"/>
+                <path d="M6.93129 5.50433C7.45435 6.57321 7.88321 7.63643 7.88321 8.24965C7.88321 9.67388 6.84948 10.8533 5.49872 11.0647C5.39846 10.7071 5.34475 10.3286 5.34475 9.93757C5.34475 8.96333 6.08899 7.19437 6.93129 5.50433Z" fill="#DB4405"/>
+              </svg>
+            </div>
+            <div class="mapbox_label">Previous: ${ e.features[0].properties['Previous Energy Source'] }</div>
+          </div>
+        ` : ''}
+      </div>
+    `
+
+    // Copy coordinates array.
+    // e.features[0].layer.layout["icon-image"] = "marker_selected";
+    // console.log(e.features[0].layer.layout["icon-image"])
+    map.setLayoutProperty('uef', 'icon-image', [
+      'match',
+      ['id'],
+      e.features[0].id, 'marker_selected',
+      'marker_unselected'
+    ]);
+    const coordinates = e.features[0].geometry.coordinates;
+  
+    // Ensure that if the map is zoomed out such that multiple
+    // copies of the feature are visible, the popup appears
+    // over the copy being pointed to.
+    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+      coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+    }
+  
+    // Populate the popup and set its coordinates
+    // based on the feature found.
+    popupCountry.setLngLat(coordinates).setHTML(description).addTo(map);
+  });
+
   map.on('mouseenter', 'uef', (e) => {
     // Change the cursor style as a UI indicator.
     map.getCanvas().style.cursor = 'pointer';
