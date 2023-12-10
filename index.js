@@ -128,6 +128,9 @@ function addMapPoints() {
       });
 
       removePoints()
+
+      map.getCanvas().style.cursor = '';
+      popupCountry.remove();
     }
   })
 
@@ -176,37 +179,119 @@ function addMapPoints() {
 
   // Hover stuff
 
-  map.on('mouseenter', 'uef-countries', (e) => {
-    if (onCountry) return 
-    // Change the cursor style as a UI indicator.
-    map.getCanvas().style.cursor = 'pointer';
-    
-    //find ID of collection item in array
-    const ID = e.features[0].properties.name.toLowerCase().trim().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')
-    
-    // Copy coordinates array.
-    const locationLat = document.querySelector(`#${ID} #locationLatitude`).value;
-    const locationLong = document.querySelector(`#${ID} #locationLongitude`).value;
-    const coordinates = [locationLong, locationLat];
-    const description = document.querySelector(`#${ID} .locations-map_card`).innerHTML;
-  
-    // Ensure that if the map is zoomed out such that multiple
-    // copies of the feature are visible, the popup appears
-    // over the copy being pointed to.
-    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-    }
-  
-    // Populate the popup and set its coordinates
-    // based on the feature found.
-    popupCountry.setLngLat(coordinates).setHTML(description).addTo(map);
-  });
 
-  map.on('mouseleave', 'uef-countries', () => {
-    if (onCountry) return 
-    map.getCanvas().style.cursor = '';
-    popupCountry.remove();
-  });
+  if (mq.matches) {
+    map.off('click', 'uef-countries', (e) => {
+      if (onCountry) return 
+      // Change the cursor style as a UI indicator.
+      map.getCanvas().style.cursor = 'pointer';
+      
+      //find ID of collection item in array
+      const ID = e.features[0].properties.name.toLowerCase().trim().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')
+      
+      // Copy coordinates array.
+      const locationLat = document.querySelector(`#${ID} #locationLatitude`).value;
+      const locationLong = document.querySelector(`#${ID} #locationLongitude`).value;
+      const coordinates = [locationLong, locationLat];
+      const description = document.querySelector(`#${ID} .locations-map_card`).innerHTML;
+    
+      // Ensure that if the map is zoomed out such that multiple
+      // copies of the feature are visible, the popup appears
+      // over the copy being pointed to.
+      while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+      coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+      }
+    
+      // Populate the popup and set its coordinates
+      // based on the feature found.
+      popupCountry.setLngLat(coordinates).setHTML(description).addTo(map);
+    });
+    map.on('mouseenter', 'uef-countries', (e) => {
+      if (onCountry) return 
+      // Change the cursor style as a UI indicator.
+      map.getCanvas().style.cursor = 'pointer';
+      
+      //find ID of collection item in array
+      const ID = e.features[0].properties.name.toLowerCase().trim().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')
+      
+      // Copy coordinates array.
+      const locationLat = document.querySelector(`#${ID} #locationLatitude`).value;
+      const locationLong = document.querySelector(`#${ID} #locationLongitude`).value;
+      const coordinates = [locationLong, locationLat];
+      const description = document.querySelector(`#${ID} .locations-map_card`).innerHTML;
+    
+      // Ensure that if the map is zoomed out such that multiple
+      // copies of the feature are visible, the popup appears
+      // over the copy being pointed to.
+      while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+      coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+      }
+    
+      // Populate the popup and set its coordinates
+      // based on the feature found.
+      popupCountry.setLngLat(coordinates).setHTML(description).addTo(map);
+    });
+    map.on('mouseleave', 'uef-countries', () => {
+      if (onCountry) return 
+      map.getCanvas().style.cursor = '';
+      popupCountry.remove();
+    });
+  } else {
+    map.on('click', 'uef-countries', (e) => {
+      // Change the cursor style as a UI indicator.
+      map.getCanvas().style.cursor = 'pointer';
+      
+      //find ID of collection item in array
+      const ID = e.features[0].properties.name.toLowerCase().trim().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')
+      
+      // Copy coordinates array.
+      const locationLat = document.querySelector(`#${ID} #locationLatitude`).value;
+      const locationLong = document.querySelector(`#${ID} #locationLongitude`).value;
+      const coordinates = [locationLong, locationLat];
+      const description = document.querySelector(`#${ID} .locations-map_card`).innerHTML;
+    
+      // Ensure that if the map is zoomed out such that multiple
+      // copies of the feature are visible, the popup appears
+      // over the copy being pointed to.
+      while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+      coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+      }
+    
+      // Populate the popup and set its coordinates
+      // based on the feature found.
+      popupCountry.setLngLat(coordinates).setHTML(description).addTo(map);
+    });
+    map.off('mouseenter', 'uef-countries', (e) => {
+      if (onCountry) return 
+      // Change the cursor style as a UI indicator.
+      map.getCanvas().style.cursor = 'pointer';
+      
+      //find ID of collection item in array
+      const ID = e.features[0].properties.name.toLowerCase().trim().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')
+      
+      // Copy coordinates array.
+      const locationLat = document.querySelector(`#${ID} #locationLatitude`).value;
+      const locationLong = document.querySelector(`#${ID} #locationLongitude`).value;
+      const coordinates = [locationLong, locationLat];
+      const description = document.querySelector(`#${ID} .locations-map_card`).innerHTML;
+    
+      // Ensure that if the map is zoomed out such that multiple
+      // copies of the feature are visible, the popup appears
+      // over the copy being pointed to.
+      while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+      coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+      }
+    
+      // Populate the popup and set its coordinates
+      // based on the feature found.
+      popupCountry.setLngLat(coordinates).setHTML(description).addTo(map);
+    });
+    map.off('mouseleave', 'uef-countries', () => {
+      if (onCountry) return 
+      map.getCanvas().style.cursor = '';
+      popupCountry.remove();
+    });
+  }
 
   map.on('click', 'uef', (e) => {
     map.setLayoutProperty('uef', 'icon-image', 'marker_unselected');
