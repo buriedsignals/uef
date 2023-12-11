@@ -1,4 +1,5 @@
-
+let miniGridProjectsImpact = 0
+let connectionsLengthImpact = 0
 
 let miniGridProjects = 0
 let connectionsLength = 0
@@ -88,6 +89,30 @@ function addMapPoints() {
   allPoints = map.queryRenderedFeatures({
     layers: ['uef'],
   })
+  miniGridProjectsImpact = allPoints.length
+  let connectionsImpact = allPoints.filter(point => {
+    const totalWattage = point.properties['SSPU Total Wattage']
+    return totalWattage
+  })
+  connectionsLengthImpact = 0
+  connectionsImpact.map(connection => {
+    connectionsLengthImpact += connection.properties['SSPU Total Wattage']
+  })
+
+  function formatNumber(num) {
+    if (num >= 1000) {
+      return (num / 1000).toFixed(1) + 'k';
+    }
+    return num;
+  }
+
+  console.log(connectionsLengthImpact)
+
+  const elImpact = document.querySelector('.map_content-3')
+  const elTitle = elImpact.querySelector('.map_title-wrapper h3')
+  elTitle.innerHTML = miniGridProjectsImpact
+  // const elConnections = elImpact.querySelectorAll('.map_item')[1].querySelectorAll('div')[2]
+  // elConnections.innerHTML = formatNumber(connectionsLengthImpact)
 
   //set hover popup
   const popupCountry = new mapboxgl.Popup({
