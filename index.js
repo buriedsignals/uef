@@ -4,6 +4,7 @@ let connectionsLengthImpact = 0
 let miniGridProjects = 0
 let connectionsLength = 0
 
+
 //remove map wrapper
 $(".locations-map_wrapper").removeClass("is--show");
 
