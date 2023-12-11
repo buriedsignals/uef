@@ -109,7 +109,7 @@ function addMapPoints() {
 
   console.log(connectionsLengthImpact)
 
-  const elImpact = document.querySelector('.map_content-3')
+  const elImpact = document.querySelector('.map_list')
   const elTitle = elImpact.querySelector('.map_title-wrapper h3')
   elTitle.innerHTML = miniGridProjectsImpact
   // const elConnections = elImpact.querySelectorAll('.map_item')[1].querySelectorAll('div')[2]
