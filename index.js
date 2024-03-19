@@ -49,6 +49,7 @@ if (mq.matches) {
 // Add zoom and rotation controls to the map.
 map.addControl(new mapboxgl.NavigationControl());
 map.scrollZoom.disable();
+map.dragPan.disable();
 
 // Get cms items
 let listLocations = document.getElementById("location-list").childNodes;
