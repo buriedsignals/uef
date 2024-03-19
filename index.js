@@ -5,6 +5,8 @@ let miniGridProjects = 0
 let SSPU = 0
 let connectionsLength = 0
 
+let onClickMap = () => {}
+
 
 //remove map wrapper
 $(".locations-map_wrapper").removeClass("is--show");
@@ -89,6 +91,8 @@ function getGeoData() {
 // Invoke function
 // getGeoData();
 
+let popupCountry
+
 // define mapping function to be invoked later
 function addMapPoints() {
   removePoints()
@@ -110,7 +114,7 @@ function addMapPoints() {
   elSSPU.innerHTML = SSPUImpact
 
   //set hover popup
-  const popupCountry = new mapboxgl.Popup({
+  popupCountry = new mapboxgl.Popup({
     closeButton: false,
     closeOnClick: false
   });
@@ -128,12 +132,12 @@ function addMapPoints() {
     map.setFilter('uef', filter);
   }
 
-  map.on("click", (e) => {
+  onClickMap = (e) => {
     map.setLayoutProperty('uef', 'icon-image', 'marker_unselected');
     const features = map.queryRenderedFeatures(e.point, {
       layers: ['uef-countries', 'uef'],
     })
-    if (features.length == 0) {
+    if (e.currentTarget || features.length == 0) {
       onCountry = false
 
       if ($(".locations-map_item.is--show").length) {
@@ -161,11 +165,13 @@ function addMapPoints() {
       map.getCanvas().style.cursor = '';
       popupCountry.remove();
     }
-  })
+  }
+  
+  map.on("click", onClickMap)
 
 	// When a click event occurs on a feature in the places layer, open a popup at the
 	// location of the feature, with description HTML from its properties.
-	map.on("click", "uef-countries", (e) => {
+  map.on("click", "uef-countries", (e) => {
     if (onCountry) return
   	//find ID of collection item in array
     const ID = e.features[0].properties.name.toLowerCase().trim().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')
@@ -684,7 +690,7 @@ function addMapPoints() {
     // Populate the popup and set its coordinates
     // based on the feature found.
     popupCountry.setLngLat(coordinates).setHTML(description).addTo(map);
-  });
+  })
 
   map.on('mouseenter', 'uef', (e) => {
     // Change the cursor style as a UI indicator.
@@ -762,7 +768,7 @@ function addMapPoints() {
       'match',
       ['id'],
       e.features[0].id, 'marker_selected',
-      'marker_unselected'
+      'marker_unselectexd'
     ]);
     const coordinates = e.features[0].geometry.coordinates;
   
@@ -793,6 +799,6 @@ map.on("load", function (e) {
 
 
 //close side nav with button
-$(".close-block").click(function(){
-	$(".locations-map_wrapper").removeClass("is--show");
+$(".close-block").click((e) => {
+  onClickMap(e);
 });
