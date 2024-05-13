@@ -51,7 +51,7 @@ if (mq.matches) {
 // Add zoom and rotation controls to the map.
 map.addControl(new mapboxgl.NavigationControl());
 map.scrollZoom.disable();
-map.dragPan.disable();
+
 
 // Get cms items
 let listLocations = document.getElementById("location-list").childNodes;
@@ -763,12 +763,20 @@ function addMapPoints() {
 
     // Copy coordinates array.
     // e.features[0].layer.layout["icon-image"] = "marker_selected";
-    // console.log(e.features[0].layer.layout["icon-image"])
+    // console.log(e.features[0])
     map.setLayoutProperty('uef', 'icon-image', [
       'match',
       ['id'],
-      e.features[0].id, 'marker_selected',
-      'marker_unselectexd'
+      e.features[0].id, 
+      'marker_selected',
+      'marker_unselected'
+    ]);
+    map.setLayoutProperty('uef', 'icon-size', [
+      'match',
+      ['id'],
+      e.features[0].id, 
+      0.75,
+      0.6
     ]);
     const coordinates = e.features[0].geometry.coordinates;
   
@@ -786,6 +794,7 @@ function addMapPoints() {
 
   map.on('mouseleave', 'uef', () => {
     map.setLayoutProperty('uef', 'icon-image', 'marker_unselected');
+    map.setLayoutProperty('uef', 'icon-size', 0.6);
     map.getCanvas().style.cursor = '';
     popupCountry.remove();
   });
