@@ -16,7 +16,7 @@ $(".locations-map_wrapper").removeClass("is--show");
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // !!! REPLACE ACCESS TOKEN WITH YOURS HERE !!!
-mapboxgl.accessToken = "pk.eyJ1IjoiYnVyaWVkc2lnbmFscyIsImEiOiJjbDBhdmlhZTgwM3dtM2RxOTQ5cndsYXl0In0.Gvcq3DBOKDVRhy3QLjImiA";
+mapboxgl.accessToken = "pk.eyJ1Ijoic2Vmb3JhbGwiLCJhIjoiY2x4eGV5d2JiMDBuczJyc2JqeGE3MXdjeCJ9.1gCAydy88ZrtS4yKamc33Q";
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -32,7 +32,7 @@ let selectedMapLocations = [];
 // Initialize map and load in #map wrapper
 let map = new mapboxgl.Map({
 	container: "map",
-	style: "mapbox://styles/buriedsignals/clpsju6cd017001qtapftbsnz",
+	style: "mapbox://styles/seforall/cly8alt7f00gh01nw3qfm09qs",
 	center: [24.827817, -6.711618],
 	zoom: 1,
 });
@@ -98,7 +98,7 @@ function addMapPoints() {
   removePoints()
 
   allPoints = map.queryRenderedFeatures({
-    layers: ['uef'],
+    layers: ['uef-markers'],
   })
   miniGridProjectsImpact = allPoints.filter(point => {
     return point.properties['Project Type'] == "MG"
@@ -123,19 +123,19 @@ function addMapPoints() {
   // add points of the country
   function addPoints(e) {
     let filter = ['in', 'Country', e.features[0].properties.name];
-    map.setFilter('uef', filter);
+    map.setFilter('uef-markers', filter);
   }
 
   // add points of the country
   function removePoints() {
     let filter = ['in', 'Country', ''];
-    map.setFilter('uef', filter);
+    map.setFilter('uef-markers', filter);
   }
 
   onClickMap = (e) => {
-    map.setLayoutProperty('uef', 'icon-image', 'marker_unselected');
+    map.setLayoutProperty('uef-markers', 'icon-image', 'marker_unselected');
     const features = map.queryRenderedFeatures(e.point, {
-      layers: ['uef-countries', 'uef'],
+      layers: ['uef-countries', 'uef-markers'],
     })
     if (e.currentTarget || features.length == 0) {
       onCountry = false
@@ -329,7 +329,7 @@ function addMapPoints() {
       
       //find ID of collection item in array
       const ID = e.features[0].properties.name.toLowerCase().trim().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')
-      
+
       miniGridProjects = allPoints.filter(point => {
         const country = point.properties['Country'].toLowerCase().trim().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')
         return country == ID && point.properties['Project Type'] == "MG"
@@ -596,8 +596,8 @@ function addMapPoints() {
     });
   }
 
-  map.on('click', 'uef', (e) => {
-    map.setLayoutProperty('uef', 'icon-image', 'marker_unselected');
+  map.on('click', 'uef-markers', (e) => {
+    map.setLayoutProperty('uef-markers', 'icon-image', 'marker_unselected');
     map.getCanvas().style.cursor = '';
     popupCountry.remove();
 
@@ -672,7 +672,7 @@ function addMapPoints() {
     // Copy coordinates array.
     // e.features[0].layer.layout["icon-image"] = "marker_selected";
     // console.log(e.features[0].layer.layout["icon-image"])
-    map.setLayoutProperty('uef', 'icon-image', [
+    map.setLayoutProperty('uef-markers', 'icon-image', [
       'match',
       ['id'],
       e.features[0].id, 'marker_selected',
@@ -692,7 +692,7 @@ function addMapPoints() {
     popupCountry.setLngLat(coordinates).setHTML(description).addTo(map);
   })
 
-  map.on('mouseenter', 'uef', (e) => {
+  map.on('mouseenter', 'uef-markers', (e) => {
     // Change the cursor style as a UI indicator.
     map.getCanvas().style.cursor = 'pointer';
     
@@ -764,14 +764,14 @@ function addMapPoints() {
     // Copy coordinates array.
     // e.features[0].layer.layout["icon-image"] = "marker_selected";
     // console.log(e.features[0])
-    map.setLayoutProperty('uef', 'icon-image', [
+    map.setLayoutProperty('uef-markers', 'icon-image', [
       'match',
       ['id'],
       e.features[0].id, 
       'marker_selected',
       'marker_unselected'
     ]);
-    map.setLayoutProperty('uef', 'icon-size', [
+    map.setLayoutProperty('uef-markers', 'icon-size', [
       'match',
       ['id'],
       e.features[0].id, 
@@ -792,9 +792,9 @@ function addMapPoints() {
     popupCountry.setLngLat(coordinates).setHTML(description).addTo(map);
   });
 
-  map.on('mouseleave', 'uef', () => {
-    map.setLayoutProperty('uef', 'icon-image', 'marker_unselected');
-    map.setLayoutProperty('uef', 'icon-size', 0.6);
+  map.on('mouseleave', 'uef-markers', () => {
+    map.setLayoutProperty('uef-markers', 'icon-image', 'marker_unselected');
+    map.setLayoutProperty('uef-markers', 'icon-size', 0.6);
     map.getCanvas().style.cursor = '';
     popupCountry.remove();
   });
