@@ -1,0 +1,574 @@
+
+<!DOCTYPE html><!-- Last Published: Mon Jul 08 2024 08:34:01 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="uefacility.webflow.io" data-wf-page="654aff9d488b25e704c2a6fd" data-wf-site="654aff9d488b25e704c2a6aa" lang="en"><head><meta charset="utf-8"/><title>Home | Universal Energy Facility</title><meta content="Home | Universal Energy Facility" property="og:title"/><meta content="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/656cd65f9b90eacc39842691_Meta%201.jpg" property="og:image"/><meta content="Home | Universal Energy Facility" property="twitter:title"/><meta content="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/656cd65f9b90eacc39842691_Meta%201.jpg" property="twitter:image"/><meta content="width=device-width, initial-scale=1" name="viewport"/><link href="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/css/uefacility.webflow.9bacd5950.css" rel="stylesheet" type="text/css"/><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/656cd6331afe859e487a822d_favicon.png" rel="shortcut icon" type="image/x-icon"/><link href="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/656cd63763564c91d4ba6e4b_Webclip.png" rel="apple-touch-icon"/><!-- Finsweet Cookie Consent -->
+  <script async src="https://cdn.jsdelivr.net/npm/@finsweet/cookie-consent@1/fs-cc.js" fs-cc-mode="opt-in"></script>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WDT2LTCN');</script>
+  <!-- End Google Tag Manager -->
+  
+  
+  <!-- Please keep this css code to improve the font quality-->
+  <style>
+    * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -o-font-smoothing: antialiased;
+  }
+  .loader-wrapper {
+    display: block !important;  
+  }
+  </style>
+  
+  <style>
+  [text-split] {opacity: 0;}
+  html.w-editor [text-split] {opacity: 1;}
+  
+  .word {
+    overflow: hidden;
+    padding-bottom: 0.1em;
+    margin-bottom: -0.1em;
+    transform-origin: bottom;
+  }
+  </style><style>
+  /*width*/
+  .location-map_card-wrap::-webkit-scrollbar {
+  width:5px;
+  }
+  /*track*/
+  .location-map_card-wrap::-webkit-scrollbar-track {
+  background:rgba(255, 255, 255, 0);
+  border-width:5px;
+  border-style:none;
+  }
+  /*thumb*/
+  .location-map_card-wrap::-webkit-scrollbar-thumb {
+  background:rgb(251, 194, 8);
+  border-radius:24px;
+  }
+  </style>
+  
+  <style>
+  /*width*/
+  .location-map_gallery::-webkit-scrollbar {
+  width:auto;
+  }
+  /*track*/
+  .location-map_gallery::-webkit-scrollbar-track {
+  background:rgb(255, 255, 255);
+  }
+  /*thumb*/
+  .location-map_gallery::-webkit-scrollbar-thumb {
+  background:rgb(251, 194, 8);
+  border-width:1px;
+  border-style:none;
+  border-color:rgb(251, 194, 8);
+  border-radius:24px;
+  }
+  </style>
+  
+  <!-- [Attributes by Finsweet] CMS Slider -->
+  <script async src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsslider@1/cmsslider.js"></script>
+  
+  <style>
+  /* add custom cursor */
+  .typed-words::after {
+    content: "|";
+    display: inline;
+    color: #fbc209 !important;
+    animation: blink 1s infinite;
+  }
+  
+  /* custom cursor animation */
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  </style>
+  
+  <!-- Mapbox Resources -->
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css' rel='stylesheet' />
+  
+  <style>
+  /*style map popups*/
+  .mapboxgl-popup {
+    max-width: 40vw !important;
+  }
+  @media screen and (max-width: 600px) {
+    .mapboxgl-popup {
+      max-width: none !important;
+      top: inherit;
+      left: 50%;
+      bottom: 50px;
+      transform: translate3d(-50%, 0, 0) !important;
+      width: 90% !important;
+      max-width: 100% !important;
+    }
+    .mapboxgl-popup-tip {
+      display: none;
+    }
+    .mapboxgl-popup-content {
+      width: 100% !important;
+      border-radius: 18px !important;
+    }
+  }
+  .mapboxgl-popup-content {
+    display: flex;
+    gap: 3rem;
+    pointer-events: none;
+    border-radius: 18px;
+    box-shadow: none;
+    padding-top: 18px !important;
+    padding-bottom: 18px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    border-width: 1px;
+    border-color: #F5F5F5;
+    color: black;
+    background-color: white;
+  }
+  /*popup bottom arrow color*/
+  .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+    border-top-color: white;
+  }
+  .mapbox-header {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+  .mapbox-organisation {
+    display: inline-block;
+    height: fit-content;
+    font-size: 1rem;
+    padding: .35rem .5rem;
+    background-color: #F5F5F5;
+    border-radius: 8px;
+  }
+  .icon-embed-xxsmall svg {
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  </style></head><body><div class="page-wrapper"><div class="global-styles w-embed"><style>
+  
+  /*width*/
+  .navbar_menu::-webkit-scrollbar {
+  width:7px;
+  }
+  /*thumb*/
+  .navbar_menu::-webkit-scrollbar-thumb {
+  background:#fbc209;
+  border-radius:10px;
+  }
+  
+  /* Focus state style for keyboard navigation for the focusable elements */
+  *[tabindex]:focus-visible,
+    input[type="file"]:focus-visible {
+     outline: 0.125rem solid #4d65ff;
+     outline-offset: 0.125rem;
+  }
+  
+  /* Get rid of top margin on first element in any rich text element */
+  .w-richtext > :not(div):first-child, .w-richtext > div:first-child > :first-child {
+    margin-top: 0 !important;
+  }
+  
+  /* Get rid of bottom margin on last element in any rich text element */
+  .w-richtext>:last-child, .w-richtext ol li:last-child, .w-richtext ul li:last-child {
+    margin-bottom: 0 !important;
+  }
+  
+  /* Prevent all click and hover interaction with an element */
+  .pointer-events-off {
+    pointer-events: none;
+  }
+  
+  /* Enables all click and hover interaction with an element */
+  .pointer-events-on {
+    pointer-events: auto;
+  }
+  
+  /* Create a class of .div-square which maintains a 1:1 dimension of a div */
+  .div-square::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+  
+  /* Make sure containers never lose their center alignment */
+  .container-medium,.container-small, .container-large {
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+  
+  /* 
+  Make the following elements inherit typography styles from the parent and not have hardcoded values. 
+  Important: You will not be able to style for example "All Links" in Designer with this CSS applied.
+  Uncomment this CSS to use it in the project. Leave this message for future hand-off.
+  */
+  /*
+  a,
+  .w-input,
+  .w-select,
+  .w-tab-link,
+  .w-nav-link,
+  .w-dropdown-btn,
+  .w-dropdown-toggle,
+  .w-dropdown-link {
+    color: inherit;
+    text-decoration: inherit;
+    font-size: inherit;
+  }
+  */
+  
+  /* Apply "..." after 4 lines of text */
+  .text-style-4lines {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+  
+  /* Apply "..." after 3 lines of text */
+  .text-style-3lines {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  
+  /* Apply "..." after 2 lines of text */
+  .text-style-2lines {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  
+  /* Apply "..." after 2 lines of text */
+  .text-style-1lines {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+  
+  /* Adds inline flex display */
+  .display-inlineflex {
+    display: inline-flex;
+  }
+  
+  /* These classes are never overwritten */
+  .hide {
+    display: none !important;
+  }
+  
+  @media screen and (max-width: 991px) {
+      .hide, .hide-tablet {
+          display: none !important;
+      }
+  }
+    @media screen and (max-width: 767px) {
+      .hide-mobile-landscape{
+        display: none !important;
+      }
+  }
+    @media screen and (max-width: 479px) {
+      .hide-mobile{
+        display: none !important;
+      }
+  }
+   
+  .margin-0 {
+    margin: 0rem !important;
+  }
+    
+  .padding-0 {
+    padding: 0rem !important;
+  }
+  
+  .spacing-clean {
+  padding: 0rem !important;
+  margin: 0rem !important;
+  }
+  
+  .margin-top {
+    margin-right: 0rem !important;
+    margin-bottom: 0rem !important;
+    margin-left: 0rem !important;
+  }
+  
+  .padding-top {
+    padding-right: 0rem !important;
+    padding-bottom: 0rem !important;
+    padding-left: 0rem !important;
+  }
+    
+  .margin-right {
+    margin-top: 0rem !important;
+    margin-bottom: 0rem !important;
+    margin-left: 0rem !important;
+  }
+  
+  .padding-right {
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
+    padding-left: 0rem !important;
+  }
+  
+  .margin-bottom {
+    margin-top: 0rem !important;
+    margin-right: 0rem !important;
+    margin-left: 0rem !important;
+  }
+  
+  .padding-bottom {
+    padding-top: 0rem !important;
+    padding-right: 0rem !important;
+    padding-left: 0rem !important;
+  }
+  
+  .margin-left {
+    margin-top: 0rem !important;
+    margin-right: 0rem !important;
+    margin-bottom: 0rem !important;
+  }
+    
+  .padding-left {
+    padding-top: 0rem !important;
+    padding-right: 0rem !important;
+    padding-bottom: 0rem !important;
+  }
+    
+  .margin-horizontal {
+    margin-top: 0rem !important;
+    margin-bottom: 0rem !important;
+  }
+  
+  .padding-horizontal {
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
+  }
+  
+  .margin-vertical {
+    margin-right: 0rem !important;
+    margin-left: 0rem !important;
+  }
+    
+  .padding-vertical {
+    padding-right: 0rem !important;
+    padding-left: 0rem !important;
+  }
+  
+  /* Apply "..." at 100% width */
+  .truncate-width { 
+      width: 100%; 
+      white-space: nowrap; 
+      overflow: hidden; 
+      text-overflow: ellipsis; 
+  }
+  /* Removes native scrollbar */
+  .no-scrollbar {
+      -ms-overflow-style: none;
+      overflow: -moz-scrollbars-none; 
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+      display: none;
+  }
+  
+  </style></div><div class="ticker_wrapper"><div class="ticker_collection-wrapper w-dyn-list"><div role="list" class="ticker_collection-list w-dyn-items"><div role="listitem" class="ticker_collection-item w-dyn-item"><div class="ticker_component"><a href="https://www.seforall.org/" target="_blank" class="ticker_content w-inline-block"><div class="ticker_label text-style-2lines">This is an important news update</div><div class="button is-ticker"><div data-w-id="73a3389a-4f33-bc0b-1a20-befe93934d5f">Read more</div><div class="icon-embed-xxsmall is-ticker w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 256 256"><title>plus-bold</title><g fill="currentcolor"><path fill="none" d="M0 0h256v256H0z"></path><path fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24" d="M40 128h176"></path><path fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24" d="M128 40v176"></path></g></svg></div></div></a></div></div></div></div></div><div data-animation="default" class="navbar_component w-nav" data-easing2="ease" fs-scrolldisable-element="smart-nav" data-easing="ease" data-collapse="medium" data-w-id="b8c49a2b-2e19-5d13-1090-ce507bd2a9a3" role="banner" data-duration="400"><div class="navbar_container"><div class="navbar6_logo-link"><a href="https://www.seforall.org/" target="_blank" class="navbar_logo-link w-inline-block"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/655df43973e68cec1ad743c1_Logo1.svg" loading="lazy" alt="Sustainable energy for all" class="navbar_logo"/></a><a href="/" aria-current="page" class="navbar_logo-link w-inline-block w--current"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/655df4394951cfa12469fb01_Logo2.svg" loading="lazy" alt="Universal Energy Facility" class="navbar_logo is-horizontal"/></a></div><nav role="navigation" class="navbar_menu w-nav-menu"><div class="navbar_links-wrapper"><div class="navbar_menu-left"><a href="/about-us" class="navbar_link w-inline-block"><div class="navlink_bg1"><div color="" class="navlink_label">About</div><div class="navlink_gradient-label">About</div></div><div class="navlink_dot"></div></a><div data-hover="true" data-delay="200" data-w-id="bf642010-c6f9-ea0e-eff7-dd51f647aba4" class="navbar_dropdown w-dropdown"><div class="navbar_dropdown-toggle w-dropdown-toggle"><div class="navbar_dropdown-link"><div>Programmes</div></div><div class="dropdown-chevron w-embed"><svg width=" 100%" height=" 100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.55806 6.29544C2.46043 6.19781 2.46043 6.03952 2.55806 5.94189L3.44195 5.058C3.53958 4.96037 3.69787 4.96037 3.7955 5.058L8.00001 9.26251L12.2045 5.058C12.3021 4.96037 12.4604 4.96037 12.5581 5.058L13.4419 5.94189C13.5396 6.03952 13.5396 6.19781 13.4419 6.29544L8.17678 11.5606C8.07915 11.6582 7.92086 11.6582 7.82323 11.5606L2.55806 6.29544Z" fill="currentColor"/>
+  </svg></div></div><nav class="navbar-dropdown_dropdown-list w-dropdown-list"><div class="dropdown_cms-wrapper w-dyn-list"><div role="list" class="navbar_cms-list w-dyn-items"><div role="listitem" class="navbar_cms-item w-dyn-item"><a href="/programme/sspu" class="navbar-dropdown8_dropdown-link w-inline-block"><div class="navbar-dropdown8_text-wrapper"><div class="navbar_dropdown-title"><div class="text-weight-semibold">Stand-Alone Solar for Productive Use</div><div class="icon-embed-xxsmall text-color-orange1 w-embed"><svg width="100%" height="auto" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1.5 9L4.93432 5.56568C5.24673 5.25327 5.24673 4.74673 4.93431 4.43431L1.5 1" stroke="currentcolor" stroke-width="1.2" stroke-linecap="round"/>
+  </svg></div></div><div class="navbar_dropdown-content-bottom"><p class="text-size-small text-style-2lines">Solar energy systems propelling economic development</p></div></div></a></div><div role="listitem" class="navbar_cms-item w-dyn-item"><a href="/programme/mini-grids-programme" class="navbar-dropdown8_dropdown-link w-inline-block"><div class="navbar-dropdown8_text-wrapper"><div class="navbar_dropdown-title"><div class="text-weight-semibold">Mini-Grids Programme</div><div class="icon-embed-xxsmall text-color-orange1 w-embed"><svg width="100%" height="auto" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1.5 9L4.93432 5.56568C5.24673 5.25327 5.24673 4.74673 4.93431 4.43431L1.5 1" stroke="currentcolor" stroke-width="1.2" stroke-linecap="round"/>
+  </svg></div></div><div class="navbar_dropdown-content-bottom"><p class="text-size-small text-style-2lines">An effective solution to close the clean energy access gap</p></div></div></a></div></div></div><a href="/programmes" class="navbar-dropdown8_dropdown-link w-inline-block"><div class="navbar-dropdown8_text-wrapper"><div class="navbar_dropdown-title"><div class="text-weight-semibold">View all programmes</div><div class="icon-embed-xxsmall text-color-orange1 w-embed"><svg width="100%" height="auto" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1.5 9L4.93432 5.56568C5.24673 5.25327 5.24673 4.74673 4.93431 4.43431L1.5 1" stroke="currentcolor" stroke-width="1.2" stroke-linecap="round"/>
+  </svg></div></div><div class="navbar_dropdown-content-bottom"><p class="text-size-small text-style-2lines">Discover our diverse range of programs that aim to create positive change in communities around the world.</p></div></div></a></nav></div><a href="/media" class="navbar_link w-inline-block"><div class="navlink_bg1"><div color="" class="navlink_label">Media</div><div class="navlink_gradient-label">Media</div></div><div class="navlink_dot"></div></a><a href="/impact" class="navbar_link w-inline-block"><div class="navlink_bg1"><div color="" class="navlink_label">Impact</div><div class="navlink_gradient-label">Impact</div></div><div class="navlink_dot"></div></a><div data-hover="true" data-delay="200" data-w-id="0b18fd63-aff3-23b7-0937-6c5123a479c1" class="navbar_dropdown w-dropdown"><div class="navbar_dropdown-toggle w-dropdown-toggle"><div class="navbar_dropdown-link"><div>Resources</div></div><div class="dropdown-chevron w-embed"><svg width=" 100%" height=" 100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.55806 6.29544C2.46043 6.19781 2.46043 6.03952 2.55806 5.94189L3.44195 5.058C3.53958 4.96037 3.69787 4.96037 3.7955 5.058L8.00001 9.26251L12.2045 5.058C12.3021 4.96037 12.4604 4.96037 12.5581 5.058L13.4419 5.94189C13.5396 6.03952 13.5396 6.19781 13.4419 6.29544L8.17678 11.5606C8.07915 11.6582 7.92086 11.6582 7.82323 11.5606L2.55806 6.29544Z" fill="currentColor"/>
+  </svg></div></div><nav class="navbar-dropdown_dropdown-list is-padding-vertical w-dropdown-list"><a href="/resources" class="navbar-dropdown8_dropdown-link w-inline-block"><div class="navbar-dropdown8_text-wrapper"><div class="navbar_dropdown-title"><div class="text-weight-semibold">Resources</div><div class="icon-embed-xxsmall text-color-orange1 w-embed"><svg width="100%" height="auto" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1.5 9L4.93432 5.56568C5.24673 5.25327 5.24673 4.74673 4.93431 4.43431L1.5 1" stroke="currentcolor" stroke-width="1.2" stroke-linecap="round"/>
+  </svg></div></div><div class="navbar_dropdown-content-bottom"><p class="text-size-small text-style-2lines">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div></div></a><a href="/tracker" class="navbar-dropdown8_dropdown-link w-inline-block"><div class="navbar-dropdown8_text-wrapper"><div class="navbar_dropdown-title"><div class="text-weight-semibold">Tracker</div><div class="icon-embed-xxsmall text-color-orange1 w-embed"><svg width="100%" height="auto" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1.5 9L4.93432 5.56568C5.24673 5.25327 5.24673 4.74673 4.93431 4.43431L1.5 1" stroke="currentcolor" stroke-width="1.2" stroke-linecap="round"/>
+  </svg></div></div><div class="navbar_dropdown-content-bottom"><p class="text-size-small text-style-2lines">Offering global progress monitoring and promoting collaboration.</p></div></div></a><a href="https://www.seforall.org/" target="_blank" class="navbar-dropdown8_dropdown-link w-inline-block"><div class="navbar-dropdown8_text-wrapper"><div class="navbar_dropdown-title"><div class="text-weight-semibold">SEforAll</div><div class="icon-embed-xxsmall text-color-orange1 w-embed"><svg width="100%" height="auto" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1.5 9L4.93432 5.56568C5.24673 5.25327 5.24673 4.74673 4.93431 4.43431L1.5 1" stroke="currentcolor" stroke-width="1.2" stroke-linecap="round"/>
+  </svg></div></div><div class="navbar_dropdown-content-bottom"><p class="text-size-small text-style-2lines">Lorem ipsum dolor sit amet.</p></div></div></a></nav></div></div><div class="navbar_menu-right"><a data-w-id="25e28b3f-3cb0-867b-6be0-421627356991" href="mailto:uef@seforall.org " class="button w-inline-block"><div class="z-index-2">Contact us</div><div class="button-background1"></div><div class="button-background2"></div></a></div></div><div class="navbar_socials"><div class="margin-bottom margin-small"><div class="text-style-allcaps">social media</div></div><div class="w-layout-grid post-header_socials"><a href="#" class="post_social-link is-alternate w-inline-block"><div class="post_social-icon w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M20.9999 7.66008V8.00008C21.0007 9.06616 20.576 10.0885 19.8199 10.84L16.9999 13.67C16.4738 14.1911 15.6261 14.1911 15.1 13.67L15 13.56C14.8094 13.3656 14.8094 13.0544 15 12.86L18.4399 9.42006C18.807 9.03938 19.0083 8.52883 18.9999 8.00008V7.66008C19.0003 7.12705 18.788 6.61589 18.4099 6.2401L17.7599 5.59011C17.3841 5.21207 16.873 4.99969 16.3399 5.00011H15.9999C15.4669 4.99969 14.9558 5.21207 14.58 5.59011L11.14 9.00007C10.9456 9.19064 10.6344 9.19064 10.44 9.00007L10.33 8.89007C9.8089 8.36394 9.8089 7.51623 10.33 6.99009L13.16 4.15012C13.9165 3.40505 14.9382 2.99133 15.9999 3.00014H16.3399C17.4011 2.9993 18.4191 3.42018 19.1699 4.17012L19.8299 4.83012C20.5798 5.5809 21.0007 6.59891 20.9999 7.66008ZM8.64993 13.94L13.9399 8.65008C14.0338 8.55543 14.1616 8.50218 14.2949 8.50218C14.4282 8.50218 14.556 8.55543 14.6499 8.65008L15.3499 9.35007C15.4445 9.44395 15.4978 9.57175 15.4978 9.70507C15.4978 9.83839 15.4445 9.96618 15.3499 10.0601L10.0599 15.35C9.96604 15.4447 9.83824 15.4979 9.70492 15.4979C9.57161 15.4979 9.44381 15.4447 9.34993 15.35L8.64993 14.65C8.55528 14.5561 8.50204 14.4283 8.50204 14.295C8.50204 14.1617 8.55528 14.0339 8.64993 13.94ZM13.5599 15C13.3655 14.8094 13.0543 14.8094 12.8599 15L9.42993 18.41C9.0517 18.7905 8.53645 19.003 7.99995 18.9999H7.65995C7.12691 19.0004 6.61576 18.788 6.23997 18.41L5.58997 17.76C5.21194 17.3842 4.99956 16.873 4.99998 16.34V16C4.99956 15.4669 5.21194 14.9558 5.58997 14.58L9.00993 11.14C9.2005 10.9456 9.2005 10.6345 9.00993 10.44L8.89993 10.33C8.3738 9.80894 7.52609 9.80894 6.99996 10.33L4.17999 13.16C3.42392 13.9116 2.99916 14.9339 3 16V16.35C3.00182 17.4077 3.42249 18.4216 4.16999 19.1699L4.82998 19.8299C5.58076 20.5799 6.59878 21.0008 7.65995 20.9999H7.99995C9.05338 21.0061 10.0667 20.5964 10.8199 19.8599L13.6699 17.01C14.191 16.4838 14.191 15.6361 13.6699 15.11L13.5599 15Z" fill="CurrentColor"/>
+  </svg></div><div class="hide">copy url</div></a><a href="#" class="post_social-link is-alternate w-inline-block"><div class="post_social-icon w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3ZM8 18C8.27614 18 8.5 17.7761 8.5 17.5V10.5C8.5 10.2239 8.27614 10 8 10H6.5C6.22386 10 6 10.2239 6 10.5V17.5C6 17.7761 6.22386 18 6.5 18H8ZM7.25 9C6.42157 9 5.75 8.32843 5.75 7.5C5.75 6.67157 6.42157 6 7.25 6C8.07843 6 8.75 6.67157 8.75 7.5C8.75 8.32843 8.07843 9 7.25 9ZM17.5 18C17.7761 18 18 17.7761 18 17.5V12.9C18.0325 11.3108 16.8576 9.95452 15.28 9.76C14.177 9.65925 13.1083 10.1744 12.5 11.1V10.5C12.5 10.2239 12.2761 10 12 10H10.5C10.2239 10 10 10.2239 10 10.5V17.5C10 17.7761 10.2239 18 10.5 18H12C12.2761 18 12.5 17.7761 12.5 17.5V13.75C12.5 12.9216 13.1716 12.25 14 12.25C14.8284 12.25 15.5 12.9216 15.5 13.75V17.5C15.5 17.7761 15.7239 18 16 18H17.5Z" fill="CurrentColor"/>
+  </svg></div><div class="hide">share on linkedin</div></a><a href="#" class="post_social-link is-alternate w-inline-block"><div class="post_social-icon w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M20.9728 6.7174C20.5084 7.33692 19.947 7.87733 19.3103 8.31776C19.3103 8.47959 19.3103 8.64142 19.3103 8.81225C19.3154 11.7511 18.1415 14.5691 16.0518 16.6345C13.962 18.6999 11.1312 19.8399 8.19405 19.7989C6.49599 19.8046 4.81967 19.4169 3.29642 18.6661C3.21428 18.6302 3.16131 18.549 3.16162 18.4593V18.3604C3.16162 18.2313 3.26623 18.1267 3.39527 18.1267C5.06442 18.0716 6.67402 17.4929 7.99634 16.4724C6.48553 16.4419 5.12619 15.5469 4.5006 14.1707C4.46901 14.0956 4.47884 14.0093 4.52657 13.9432C4.57429 13.8771 4.653 13.8407 4.73425 13.8471C5.19342 13.8932 5.65718 13.8505 6.1002 13.7212C4.43239 13.375 3.17921 11.9904 2.99986 10.2957C2.99349 10.2144 3.02992 10.1357 3.096 10.0879C3.16207 10.0402 3.24824 10.0303 3.32338 10.062C3.77094 10.2595 4.25409 10.3635 4.74324 10.3676C3.28184 9.40846 2.65061 7.58405 3.20655 5.92622C3.26394 5.76513 3.40181 5.64612 3.5695 5.61294C3.73718 5.57975 3.90996 5.63728 4.02432 5.76439C5.99639 7.86325 8.70604 9.11396 11.5819 9.25279C11.5083 8.95885 11.4721 8.65676 11.4741 8.35372C11.501 6.76472 12.4842 5.34921 13.9634 4.76987C15.4425 4.19054 17.1249 4.56203 18.223 5.71044C18.9714 5.56785 19.695 5.31645 20.3707 4.96421C20.4202 4.93331 20.483 4.93331 20.5325 4.96421C20.5634 5.01373 20.5634 5.07652 20.5325 5.12604C20.2052 5.87552 19.6523 6.50412 18.9509 6.92419C19.5651 6.85296 20.1685 6.70807 20.7482 6.49264C20.797 6.45942 20.8611 6.45942 20.9099 6.49264C20.9508 6.51134 20.9814 6.54711 20.9935 6.59042C21.0056 6.63373 20.998 6.68018 20.9728 6.7174Z" fill="CurrentColor"/>
+  </svg></div><div class="hide">share on twitter</div></a><a href="#" class="post_social-link is-alternate w-inline-block"><div class="post_social-icon w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M16.5 6H13.5C12.9477 6 12.5 6.44772 12.5 7V10H16.5C16.6137 9.99748 16.7216 10.0504 16.7892 10.1419C16.8568 10.2334 16.8758 10.352 16.84 10.46L16.1 12.66C16.0318 12.8619 15.8431 12.9984 15.63 13H12.5V20.5C12.5 20.7761 12.2761 21 12 21H9.5C9.22386 21 9 20.7761 9 20.5V13H7.5C7.22386 13 7 12.7761 7 12.5V10.5C7 10.2239 7.22386 10 7.5 10H9V7C9 4.79086 10.7909 3 13 3H16.5C16.7761 3 17 3.22386 17 3.5V5.5C17 5.77614 16.7761 6 16.5 6Z" fill="CurrentColor"/>
+  </svg></div><div class="hide">share on facebook</div></a></div></div></nav><div class="navbar6_menu-button w-nav-button"><div class="navbar6_menu-content"><div class="navbar_button-text is-open">Menu</div><div class="navbar_button-text is-close">Close</div><div class="menu-icon"><div class="menu-icon_line-top"></div><div class="menu-icon_line-middle"><div class="menu-icon_line-middle-inner"></div></div><div class="menu-icon_line-bottom"></div></div></div></div></div></div><div class="loader-wrapper"><div data-w-id="637c8c4c-e28e-46ac-05c7-d9a395738cd8" class="intro_wrapper"><div class="intro_outer-ring"></div><div class="intro_circle"><div class="intro_gradient"></div></div></div></div><div class="cookies_wrapper"><div fs-cc="banner" class="cookies-banner_component"><div class="cookies-banner_container"><div class="cookies-banner_text">We use cookies to improve your experience. By using this website you agree to our<a href="#" class="cookies-banner_text-link"> </a>Cookie Policy. <a href="#" class="cookies-banner_text-link"><span>More info</span></a></div><div class="cookies-banner_buttons-wrapper"><a fs-cc="allow" data-w-id="dcebc7dd-0a1e-6ff9-8134-173a848d8ccd" href="#" class="button w-inline-block"><div class="z-index-2">Accept</div><div class="button-background1"></div><div class="button-background2"></div></a><a fs-cc="deny" href="#" class="button is-secondary is-icon w-inline-block"><div class="button-icon_component"><div class="button-icon_circle-wrapper"><div class="button-icon_circle"></div><div class="button-icon_icon-overlay"></div></div><div class="button-icon_line"></div></div><div>Deny</div></a></div></div></div><div fs-cc="manager" class="cookies-manager_component"><div fs-cc="open-preferences" role="button" tabindex="0" title="Cookie Preferences" aria-label="Cookie Preferences" class="fs-cc-manager2_button w-embed"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M9 8L9 8.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16 15L16 15.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M10 17L10 17.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M11 13L11 13.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M6 12L6 12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M12 21C16.9706 21 21 16.9706 21 12C21 11.4402 20.9489 10.8924 20.8511 10.361C20.3413 10.7613 19.6985 11 19 11C18.4536 11 17.9413 10.8539 17.5 10.5987C17.0587 10.8539 16.5464 11 16 11C14.3431 11 13 9.65685 13 8C13 7.60975 13.0745 7.23691 13.2101 6.89492C11.9365 6.54821 11 5.38347 11 4C11 3.66387 11.0553 3.34065 11.1572 3.03894C6.58185 3.46383 3 7.31362 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg></div></div><div fs-cc-scroll="disable" fs-cc="preferences" class="cookies-prefs_component"><div class="cookies-prefs_form-wrapper w-form"><form id="cookie-preferences" name="wf-form-Cookie-Preferences" data-name="Cookie Preferences" method="get" class="cookies-prefs_form" data-wf-page-id="654aff9d488b25e704c2a6fd" data-wf-element-id="dcebc7dd-0a1e-6ff9-8134-173a848d8cda"><div fs-cc="close" class="cookies-prefs_close"><div class="cookies-prefs_close-icon w-embed"><svg fill="currentColor" aria-hidden="true" focusable="false" viewBox="0 0 16 16">
+    <path d="M9.414 8l4.293-4.293-1.414-1.414L8 6.586 3.707 2.293 2.293 3.707 6.586 8l-4.293 4.293 1.414 1.414L8 9.414l4.293 4.293 1.414-1.414L9.414 8z"></path>
+  </svg></div></div><div class="cookies-prefs_content"><div class="cookies-prefs_space-small"><div class="cookies-prefs_title">Privacy Preferences</div></div><div class="cookies-prefs_option"><div class="cookies-prefs_toggle-wrapper"><div class="cookies-prefs_label">Essential cookies</div><div>Required</div></div></div><div class="cookies-prefs_option"><div class="cookies-prefs_toggle-wrapper"><div class="cookies-prefs_label">Marketing cookies</div><label class="w-checkbox cookies-prefs_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom cookies-prefs_checkbox"></div><input type="checkbox" id="marketing-2" name="marketing-2" data-name="Marketing 2" fs-cc-checkbox="marketing" style="opacity:0;position:absolute;z-index:-1"/><span for="marketing-2" class="cookies-prefs_checkbox-label w-form-label">Essential</span></label></div></div><div class="cookies-prefs_option"><div class="cookies-prefs_toggle-wrapper"><div class="cookies-prefs_label">Personalization cookies</div><label class="w-checkbox cookies-prefs_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom cookies-prefs_checkbox"></div><input type="checkbox" id="personalization-2" name="personalization-2" data-name="Personalization 2" fs-cc-checkbox="personalization" style="opacity:0;position:absolute;z-index:-1"/><span for="personalization-2" class="cookies-prefs_checkbox-label w-form-label">Essential</span></label></div></div><div class="cookies-prefs_option"><div class="cookies-prefs_toggle-wrapper"><div class="cookies-prefs_label">Analytics cookies</div><label class="w-checkbox cookies-prefs_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom cookies-prefs_checkbox"></div><input type="checkbox" id="analytics-2" name="analytics-2" data-name="Analytics 2" fs-cc-checkbox="analytics" style="opacity:0;position:absolute;z-index:-1"/><span for="analytics-2" class="cookies-prefs_checkbox-label w-form-label">Essential</span></label></div></div><div class="cookies-prefs_buttons-wrapper"><a fs-cc="deny" href="#" class="button is-secondary w-inline-block"><div>Reject all cookies</div></a><a fs-cc="allow" data-w-id="dcebc7dd-0a1e-6ff9-8134-173a848d8d03" href="#" class="button w-inline-block"><div class="z-index-2">allow all cookies</div><div class="button-background1"></div><div class="button-background2"></div></a><a fs-cc="submit" href="#" class="button is-alternate2 w-inline-block"><div>save preferences</div></a></div></div></form><div class="w-form-done"></div><div class="w-form-fail"></div><div fs-cc="close" class="cookies-prefs_overlay"></div></div></div></div><main class="main-wrapper"><header class="section_header"><div class="padding-global"><div class="container-large"><div class="padding-section-large"><div class="w-layout-grid header_component"><div class="header_row"><div class="max-width-large"><div class="header_content"><div class="margin-top margin-large"><h1 class="animate_bottom1">Scaling access to<span class="text-color-yellow1"></span></h1><div class="typed-words"></div><h1 class="text-color-yellow1 text-weight-bold">energy</h1></div></div></div><div class="header_image-wrapper is-align-right"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/655f7f22dd87dccc62ed05a9_unsplash_UOZ0X05IC_s%20(2).webp" loading="eager" sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 78vw, 40vw" srcset="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/655f7f22dd87dccc62ed05a9_unsplash_UOZ0X05IC_s%20(2)-p-500.webp 500w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/655f7f22dd87dccc62ed05a9_unsplash_UOZ0X05IC_s%20(2)-p-800.webp 800w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/655f7f22dd87dccc62ed05a9_unsplash_UOZ0X05IC_s%20(2).webp 1000w" alt="A sunny city scape" class="header_image"/><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c6fa6d0dd7a9dcbe2ce0_sspu_1.webp" loading="eager" sizes="(max-width: 479px) 100vw, (max-width: 767px) 404.94793701171875px, (max-width: 991px) 53vw, 39vw" srcset="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c6fa6d0dd7a9dcbe2ce0_sspu_1-p-500.webp 500w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c6fa6d0dd7a9dcbe2ce0_sspu_1.webp 703w" alt="" class="header_image"/><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c8509aa736e31c5a0bff_mg_1.webp" loading="eager" sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 78vw, 40vw" srcset="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c8509aa736e31c5a0bff_mg_1-p-500.webp 500w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c8509aa736e31c5a0bff_mg_1-p-800.webp 800w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c8509aa736e31c5a0bff_mg_1-p-1080.webp 1080w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c8509aa736e31c5a0bff_mg_1.webp 1159w" alt="" class="header_image"/></div></div><div class="header_row"><div class="header_image-wrapper hide-tablet"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c83ecc7f034818f8860d_mg_3.webp" loading="eager" sizes="(max-width: 767px) 100vw, 388.7500305175781px" srcset="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c83ecc7f034818f8860d_mg_3-p-500.webp 500w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c83ecc7f034818f8860d_mg_3.webp 703w" alt="" class="header_image"/><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c5c084a3010ab6cefea1_sspu_3.webp" loading="eager" sizes="(max-width: 767px) 100vw, (max-width: 991px) 424.23614501953125px, 43vw" srcset="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c5c084a3010ab6cefea1_sspu_3-p-500.webp 500w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c5c084a3010ab6cefea1_sspu_3-p-800.webp 800w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c5c084a3010ab6cefea1_sspu_3-p-1080.webp 1080w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c5c084a3010ab6cefea1_sspu_3.webp 1159w" alt="" class="header_image"/><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6564c5351144c18f65d2e07f_gallery5.webp" loading="eager" sizes="(max-width: 767px) 100vw, (max-width: 991px) 424.23614501953125px, 43vw" srcset="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6564c5351144c18f65d2e07f_gallery5-p-500.webp 500w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6564c5351144c18f65d2e07f_gallery5-p-800.webp 800w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6564c5351144c18f65d2e07f_gallery5.webp 1000w" alt="Desert" class="header_image"/></div><div class="max-width-large"><div class="header_content animate_bottom1"><p class="text-size-large"><br/>We are a multi-donor results-based financing (RBF) facility established to accelerate and significantly scale up energy access across Sub-Saharan Africa and beyond. We achieve this by supporting clean energy companies in deploying solutions that foster socio-economic development, aligning with both SDG7 and the Paris Agreement.</p><div class="margin-top margin-large"><div class="button-group"><a href="#" class="button is-secondary is-icon w-inline-block"><div class="button-icon_component"><div class="button-icon_circle-wrapper"><div class="button-icon_circle"></div><div class="button-icon_icon-overlay"></div></div><div class="button-icon_line"></div></div><div data-w-id="d0786952-f2dd-cc2b-eeaa-997086c82d79">Watch video</div></a></div></div></div></div></div></div></div></div></div></header><section data-w-id="3589d593-5340-53d7-03d1-e8de6ebd3580" class="section_feature overflow-hidden"><div class="problem_line-wrapper"><div class="problem_line-circle"></div><div class="problem_line"><div class="problem_line-top"></div><div class="problem_line-top is-bottom"><div class="problem_line-dash"></div><div class="problem_line-dash"></div><div class="problem_line-dash"></div><div class="problem_line-dash"></div><div class="problem_line-dash"></div><div class="problem_line-dash"></div><div class="problem_line-dash"></div><div class="problem_line-dash"></div><div class="problem_line-dash"></div><div class="problem_line-dash"></div><div class="problem_line-dash"></div></div><div class="problem_line-fader"></div></div></div><div class="padding-global"><div class="container-large"><div class="padding-section-large"><div class="w-layout-grid feature_component is-large-gap"><div class="problem-circle_wrapper"><div class="problem_image-text-wrapper"><div class="text-style-allcaps">A global problem</div></div><div class="problem-circle_row is-centered"><div class="problem-circle_image-wrapper is-bottom-left"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c604608a972d0afef79c_person_1.png" loading="lazy" alt="" class="problem-circle_image is-saturated"/></div><div class="problem-circle_image-wrapper is-top-middle"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c63a489d3a4cc2ab351b_person_3.png" loading="lazy" alt="" class="problem-circle_image"/></div><div class="problem-circle_image-wrapper is-top-middle"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/656e3e7cc78992e13fadef5a_person3.png" loading="lazy" alt="" class="problem-circle_image"/></div><div class="problem-circle_image-wrapper is-bottom-right"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/656e3e7c854c110ab07fdbde_person7.png" loading="lazy" alt="" class="problem-circle_image is-saturated"/></div></div><div class="problem-circle_row"><div class="problem-circle_image-wrapper is-middle-left"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c61ac430342d204a2930_person_2.png" loading="lazy" alt="" class="problem-circle_image is-saturated"/></div><div class="problem-circle_image-wrapper is-middle-right"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/656e3e7c619f6a2de8c319ab_person1.png" loading="lazy" alt="" class="problem-circle_image is-saturated"/></div></div><div class="problem-circle_row"><div class="problem-circle_image-wrapper is-bottom-middle-left"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/656e3e7db6b0c83d53354e28_person10.png" loading="lazy" alt="" class="problem-circle_image"/></div><div class="problem-circle_image-wrapper is-bottom-middle-right"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/656e3e7c10b93546e034b4fa_person8.png" loading="lazy" alt="" class="problem-circle_image"/></div></div><div class="problem-circle_row is-centered"><div class="problem-circle_image-wrapper is-bottom-left"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/656e3e7dd41260643e5d30b0_person9.png" loading="lazy" alt="" class="problem-circle_image"/></div><div class="problem-circle_image-wrapper is-bottom-middle"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/656e3e7c1b5532b009541231_person4.png" loading="lazy" alt="" class="problem-circle_image is-saturated"/></div><div class="problem-circle_image-wrapper is-bottom-middle"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/656e3e7c792d7e582c5740b3_person5.png" loading="lazy" alt="" class="problem-circle_image"/></div><div class="problem-circle_image-wrapper is-bottom-right"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/656e3e7c4be98939779ab2f9_person6.png" loading="lazy" alt="" class="problem-circle_image is-saturated"/></div></div></div><div data-w-id="3589d593-5340-53d7-03d1-e8de6ebd3585" class="feature_content animate_bottom1"><div class="margin-bottom margin-small"><h2 data-w-id="3589d593-5340-53d7-03d1-e8de6ebd3587">6 out of 10 people in <br/>sub-Saharan Africa are <span class="text-color-yellow1 animate_bottom3 text-weight-bold">without electricity</span></h2></div><div class="margin-bottom margin-medium"><p>This hinders almost every aspect of life, from running your own business and home to accessing quality healthcare and education.</p></div><div class="button-group"><a href="/impact" class="button is-secondary is-icon w-inline-block"><div class="button-icon_component"><div class="button-icon_circle-wrapper"><div class="button-icon_circle"></div><div class="button-icon_icon-overlay"></div></div><div class="button-icon_line"></div></div><div>Watch video</div></a></div></div></div></div></div></div></section><div class="section_solutions"><div class="padding-global"><div class="container-large"><div class="padding-bottom padding-xhuge"><div class="solutions_component"><div class="padding-global is-large"><div class="padding-section-medium"><div class="margin-bottom margin-xlarge"><div class="text-align-center"><h2>An Ambitious <br/><span class="text-color-yellow1 text-weight-bold">Solution</span></h2></div></div><div class="solutions_item-wrapper"><div id="w-node-_87dce3f6-50af-b1b8-1b2f-cc3493241c2b-04c2a6fd" class="solutions_item animate_bottom1"><div class="margin-bottom margin-small"><div class="solutions_title-wrapper"><h3 class="solutions_h3">1.3m</h3><h3 class="text-style-dosis">Clean Energy <br/>Connections</h3></div></div><p>Rural electrification unlocks significant socio-economic benefits. Public institutions like health facilities and schools can extend operational hours, improving access to services and education. This, coupled with the ability for businesses, including those run by women, to operate for longer periods and utilize electrical equipment, creates a ripple effect. The local economy thrives, fostering new opportunities and paving the way for a more prosperous future.</p></div><div id="w-node-_7128c193-df67-a50f-aca7-ef6429a8d48c-04c2a6fd" class="solutions_item animate_bottom2"><div class="margin-bottom margin-small"><div class="solutions_title-wrapper"><h3 class="solutions_h3">20</h3><h3 class="text-style-dosis">Individual <br/>connections</h3></div></div><p>This means 100k people can stay up late talking with their families after a long day of work.</p></div><div id="w-node-_929fc7aa-9c1c-a1f2-90fa-5ad9faa412b5-04c2a6fd" class="solutions_item animate_bottom1"><div class="margin-bottom margin-small"><div class="solutions_title-wrapper"><h3 class="solutions_h3">300k</h3><h3 class="text-style-dosis">Clean Cooking<br/>Solutions</h3></div></div><p>Delivering 300,000 clean cooking solutions to rural areas is a triple win. It combats climate change by reducing harmful emissions from traditional cooking and protecting forests. It decreases dependence on polluting fossil fuels by utilizing cleaner options like solar power.  These solutions significantly improve community health by minimizing indoor air pollution and fire risks, leading to safer and healthier homes.</p></div><div id="w-node-_5df93e6c-a304-fa5b-5f4b-b368727e68b4-04c2a6fd" class="solutions_item animate_bottom2"><div class="margin-bottom margin-small"><div class="solutions_title-wrapper"><h3 class="solutions_h3">4.8</h3><h3 class="text-style-dosis">MtCO2e of Carbon Emissions<br/>Reduced by 2027</h3></div></div><p>Reducing carbon emissions through clean energy is crucial for humanity&#x27;s sustainable development (SDG7). Cleaner energy sources power our lives without polluting the planet. This protects our health, ecosystems, and future economic opportunities, aligning with the Paris Agreement&#x27;s goals to combat climate change.</p></div></div></div></div></div></div></div></div></div><section class="section_programs"><div class="padding-global"><div class="container-large"><div class="padding-section-large"><div class="margin-bottom margin-xxlarge"><div class="text-align-center"><div class="max-width-small align-center animate_bottom1"><div class="margin-bottom margin-xsmall"><div class="text-style-allcaps text-weight-light">programmes</div></div><div class="margin-bottom margin-small"><h2 class="heading-style-h1">Discover <br/><span class="text-color-yellow1 text-weight-bold">our programmes</span></h2></div><p class="text-size-medium">They are all about making a real difference. We fight energy poverty and help communities thrive!</p></div></div></div><div class="programs_component"><div class="programs_list-wrapper"><div data-delay="4000" data-animation="slide" class="news_slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="false"><div class="news_mask w-slider-mask"><div class="news_slide w-slide"><div class="programs_item"><div class="programs_title-wrapper"><h3 class="text-style-dosis">Stand Alone Solar</h3></div><div class="programs_image is-absolute" data-w-id="72694e69-4a9b-7684-cc0a-b81769efd23d" data-animation-type="lottie" data-src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/656a02b59e5ebccd562ef4d7_program-animations2.json" data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="5" data-duration="0"></div><div class="programs_button-wrapper"><a href="https://uefacility.webflow.io/programme/sspu" class="button is-tertiary w-inline-block"><div>Learn more</div></a></div></div></div><div class="news_slide w-slide"><div class="programs_item"><div class="programs_title-wrapper"><h3 class="text-style-dosis">Mini-Grids</h3></div><div class="programs_image is-absolute" data-w-id="e202035f-e67d-c3c0-a4d0-cd5d801ae73b" data-animation-type="lottie" data-src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/656a02b5ae0db3d56af6a08e_program-animations1.json" data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="3" data-duration="0"></div><div class="programs_button-wrapper"><a href="https://uefacility.webflow.io/programme/mini-grids-programme" class="button is-tertiary w-inline-block"><div>Learn more</div></a></div></div></div><div class="news_slide w-slide"><div class="programs_item"><div class="programs_title-wrapper"><h3 class="text-style-dosis">Clean Cooking</h3></div><div class="programs_image is-absolute" data-w-id="3d3a17d6-76a2-abcf-1a69-aa93261d6356" data-animation-type="lottie" data-src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/656a02b53d91e926fec80207_program-animations3.json" data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="4" data-duration="0"></div><div class="programs_button-wrapper"><a href="#" class="button is-tertiary w-inline-block"><div>Learn more</div></a></div></div></div></div><div class="gallery17_arrow w-slider-arrow-left"><div class="gallery17_arrow-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M3.31066 8.75001L9.03033 14.4697L7.96967 15.5303L0.439339 8.00001L7.96967 0.469676L9.03033 1.53034L3.31066 7.25001L15.5 7.25L15.5 8.75L3.31066 8.75001Z" fill="currentColor"/>
+  </svg></div></div><div class="gallery17_arrow w-slider-arrow-right"><div class="gallery17_arrow-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M12.6893 7.25L6.96967 1.53033L8.03033 0.469666L15.5607 8L8.03033 15.5303L6.96967 14.4697L12.6893 8.75H0.5V7.25H12.6893Z" fill="currentColor"/>
+  </svg></div></div><div class="gallery17_slide-nav w-slider-nav w-slider-nav-invert w-round"></div></div></div></div></div></div></div></section><section data-w-id="e39cf849-7aaa-2c0b-a7ca-f995bfb1a29c" class="section_impact"><div class="padding-section-xxlarge z-index-2"><div class="padding-global"><div class="container-large"><div class="margin-bottom margin-xxhuge"><div class="text-align-center"><div class="max-width-medium align-center"><h2 class="heading-style-h1">The key to our success lies in partnering with <span class="text-color-yellow1 text-weight-bold">globally renowned organizations.</span></h2></div></div></div></div></div><div class="logo3_component"><div class="logo3_list"><div id="w-node-e39cf849-7aaa-2c0b-a7ca-f995bfb1a2a9-bfb1a29c" class="logo3_wrapper"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/65f0086863e230650173cea9_ukaid.svg" loading="lazy" alt="" class="logo3_logo"/></div><div id="w-node-e39cf849-7aaa-2c0b-a7ca-f995bfb1a2ab-bfb1a29c" class="logo3_wrapper"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/65f00867e1bfcfdbe6ce502a_good-energies.svg" loading="lazy" alt="" class="logo3_logo"/></div><div id="w-node-e39cf849-7aaa-2c0b-a7ca-f995bfb1a2ad-bfb1a29c" class="logo3_wrapper"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/65f00868f0c98a766273ee6a_german-cooperation-color.svg" loading="lazy" alt="" class="logo3_logo"/></div><div id="w-node-e39cf849-7aaa-2c0b-a7ca-f995bfb1a2af-bfb1a29c" class="logo3_wrapper"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/65f008685f5e7a86a61aaa10_logo.svg" loading="lazy" alt="" class="logo3_logo"/></div><div id="w-node-e39cf849-7aaa-2c0b-a7ca-f995bfb1a2b1-bfb1a29c" class="logo3_wrapper"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/65f00867fac68481d6fb98cf_logo-rockefeller-foundation.svg" loading="lazy" alt="" class="logo3_logo"/></div><div id="w-node-e39cf849-7aaa-2c0b-a7ca-f995bfb1a2b3-bfb1a29c" class="logo3_wrapper"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/65f0086775dbb9d61e6eab17_power-africa-notagline.svg" loading="lazy" alt="" class="logo3_logo"/></div></div><div class="logo3_list"><div id="w-node-fa070c4e-1eb7-8d6a-bab4-d2d434b623dc-bfb1a29c" class="logo3_wrapper"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c17babf9097b59f1dba8_AMDA.png" loading="lazy" sizes="(max-width: 479px) 79.22743225097656px, (max-width: 767px) 17vw, 132.0572967529297px" srcset="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c17babf9097b59f1dba8_AMDA-p-500.png 500w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c17babf9097b59f1dba8_AMDA.png 728w" alt="" class="logo3_logo"/></div><div id="w-node-fa070c4e-1eb7-8d6a-bab4-d2d434b623de-bfb1a29c" class="logo3_wrapper"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c17bfb1d6152262c3183_logo-bezosearthfund.webp" loading="lazy" sizes="(max-width: 479px) 112.18750762939453px, (max-width: 767px) 24vw, 186.9965362548828px" srcset="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c17bfb1d6152262c3183_logo-bezosearthfund-p-500.webp 500w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c17bfb1d6152262c3183_logo-bezosearthfund-p-800.webp 800w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c17bfb1d6152262c3183_logo-bezosearthfund-p-1080.webp 1080w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c17bfb1d6152262c3183_logo-bezosearthfund-p-1600.webp 1600w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c17bfb1d6152262c3183_logo-bezosearthfund-p-2000.webp 2000w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c17bfb1d6152262c3183_logo-bezosearthfund.webp 2431w" alt="" class="logo3_logo"/></div><div id="w-node-_9c72eeab-1e68-1ee9-6bfe-e2671f228e02-bfb1a29c" class="logo3_wrapper"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/65f008672949fd18adfa153b_geapp-logo-new.svg" loading="lazy" alt="" class="logo3_logo"/></div><div id="w-node-_1c7465e7-b222-9b9a-84ab-55b823875d0f-bfb1a29c" class="logo3_wrapper"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/65f00867ec845bf4780154dd_ikea-foundation-logo-vector.svg" loading="lazy" alt="" class="logo3_logo"/></div><div id="w-node-_2cc15e6c-4ca6-4c83-015a-7c4e3d591bed-bfb1a29c" class="logo3_wrapper"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/65f00869ebd39df85e9d0e66_shellfoundation.svg" loading="lazy" alt="" class="logo3_logo"/></div></div><div class="logo3_list"><div id="w-node-_9f16f88a-b4c9-140d-1847-0baab98b8099-bfb1a29c" class="logo3_wrapper"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/65f0086863e230650173cea9_ukaid.svg" loading="lazy" alt="" class="logo3_logo"/></div><div id="w-node-_9f16f88a-b4c9-140d-1847-0baab98b809b-bfb1a29c" class="logo3_wrapper"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/65f00867e1bfcfdbe6ce502a_good-energies.svg" loading="lazy" alt="" class="logo3_logo"/></div><div id="w-node-_9f16f88a-b4c9-140d-1847-0baab98b809d-bfb1a29c" class="logo3_wrapper"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/65f00868f0c98a766273ee6a_german-cooperation-color.svg" loading="lazy" alt="" class="logo3_logo"/></div><div id="w-node-_9f16f88a-b4c9-140d-1847-0baab98b809f-bfb1a29c" class="logo3_wrapper"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/65f008685f5e7a86a61aaa10_logo.svg" loading="lazy" alt="" class="logo3_logo"/></div><div id="w-node-_9f16f88a-b4c9-140d-1847-0baab98b80a1-bfb1a29c" class="logo3_wrapper"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/65f00867fac68481d6fb98cf_logo-rockefeller-foundation.svg" loading="lazy" alt="" class="logo3_logo"/></div><div id="w-node-_9f16f88a-b4c9-140d-1847-0baab98b80a3-bfb1a29c" class="logo3_wrapper"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/65f0086775dbb9d61e6eab17_power-africa-notagline.svg" loading="lazy" alt="" class="logo3_logo"/></div></div><div class="logo3_list"><div id="w-node-_91751cf3-c349-00d6-8285-2ca6cc338000-bfb1a29c" class="logo3_wrapper"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c17babf9097b59f1dba8_AMDA.png" loading="lazy" sizes="(max-width: 479px) 79.22743225097656px, (max-width: 767px) 17vw, 132.0572967529297px" srcset="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c17babf9097b59f1dba8_AMDA-p-500.png 500w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c17babf9097b59f1dba8_AMDA.png 728w" alt="" class="logo3_logo"/></div><div id="w-node-_91751cf3-c349-00d6-8285-2ca6cc338002-bfb1a29c" class="logo3_wrapper"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c17bfb1d6152262c3183_logo-bezosearthfund.webp" loading="lazy" sizes="(max-width: 479px) 112.18750762939453px, (max-width: 767px) 24vw, 186.9965362548828px" srcset="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c17bfb1d6152262c3183_logo-bezosearthfund-p-500.webp 500w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c17bfb1d6152262c3183_logo-bezosearthfund-p-800.webp 800w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c17bfb1d6152262c3183_logo-bezosearthfund-p-1080.webp 1080w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c17bfb1d6152262c3183_logo-bezosearthfund-p-1600.webp 1600w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c17bfb1d6152262c3183_logo-bezosearthfund-p-2000.webp 2000w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/6641c17bfb1d6152262c3183_logo-bezosearthfund.webp 2431w" alt="" class="logo3_logo"/></div><div id="w-node-_91751cf3-c349-00d6-8285-2ca6cc338004-bfb1a29c" class="logo3_wrapper"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/65f008672949fd18adfa153b_geapp-logo-new.svg" loading="lazy" alt="" class="logo3_logo"/></div><div id="w-node-_91751cf3-c349-00d6-8285-2ca6cc338006-bfb1a29c" class="logo3_wrapper"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/65f00867ec845bf4780154dd_ikea-foundation-logo-vector.svg" loading="lazy" alt="" class="logo3_logo"/></div><div id="w-node-_91751cf3-c349-00d6-8285-2ca6cc338008-bfb1a29c" class="logo3_wrapper"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/65f00869ebd39df85e9d0e66_shellfoundation.svg" loading="lazy" alt="" class="logo3_logo"/></div></div></div></div><div class="impact_background-wrapper"><div class="impact_background"></div></div></section><section class="section_news"><div class="padding-global"><div class="container-large"><div class="padding-section-large"><div class="margin-bottom margin-xxlarge"><div class="text-align-center"><div class="max-width-large align-center animate_bottom1"><div class="margin-bottom margin-xsmall"><div class="text-style-allcaps text-size-medium">LATEST Stories</div></div><div class="margin-bottom margin-small"><h2 class="heading-style-h1">Learn more about our <span class="text-color-yellow1 text-weight-bold">work improving people&#x27;s lives</span>.</h2></div></div></div></div><div class="news_component"><div class="news_list-wrapper"><div data-delay="4000" data-animation="slide" class="news_slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="false" fs-cmsslider-element="slider" id="gallery13_slider"><div class="news_mask w-slider-mask"><div class="news_slide w-slide"></div></div><div class="gallery17_arrow w-slider-arrow-left"><div class="gallery17_arrow-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M3.31066 8.75001L9.03033 14.4697L7.96967 15.5303L0.439339 8.00001L7.96967 0.469676L9.03033 1.53034L3.31066 7.25001L15.5 7.25L15.5 8.75L3.31066 8.75001Z" fill="currentColor"/>
+  </svg></div></div><div class="gallery17_arrow w-slider-arrow-right"><div class="gallery17_arrow-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M12.6893 7.25L6.96967 1.53033L8.03033 0.469666L15.5607 8L8.03033 15.5303L6.96967 14.4697L12.6893 8.75H0.5V7.25H12.6893Z" fill="currentColor"/>
+  </svg></div></div><div class="gallery17_slide-nav w-slider-nav w-slider-nav-invert w-round"></div></div><div class="news_cms-wrapper w-dyn-list"><div fs-cmsslider-element="list" role="list" class="news_cms-list w-dyn-items"><div role="listitem" class="news_cms-item w-dyn-item"><a data-w-id="2f93a325-a473-5347-aca7-4fb9d15467db" href="/posts/displacing-petrol-diesel-generators-with-solar-in-nigeria" class="news_content w-inline-block"><div class="news_item-link"><div class="news_image-wrapper"><img src="https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/65faa2432c784424eced9977_Screenshot%202024-03-20%20at%2009.45.14.webp" loading="lazy" alt="Displacing petrol and diesel generators with solar in Nigeria" sizes="(max-width: 767px) 90vw, (max-width: 991px) 43vw, 28vw" srcset="https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/65faa2432c784424eced9977_Screenshot%202024-03-20%20at%2009.45.14-p-500.webp 500w, https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/65faa2432c784424eced9977_Screenshot%202024-03-20%20at%2009.45.14-p-800.webp 800w, https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/65faa2432c784424eced9977_Screenshot%202024-03-20%20at%2009.45.14-p-1080.webp 1080w, https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/65faa2432c784424eced9977_Screenshot%202024-03-20%20at%2009.45.14-p-1600.webp 1600w, https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/65faa2432c784424eced9977_Screenshot%202024-03-20%20at%2009.45.14.webp 1704w" class="news_image"/></div><div class="news_item-content"><div class="news_item-content-top"><div class="news_category-wrapper"><div class="news_tag-dot"></div><div class="text-size-small text-weight-semibold">SSPU</div></div><div class="news_title-wrapper"><h3 class="news_title">Displacing petrol and diesel generators with solar in Nigeria</h3></div><p class="text-style-3lines">A new programme offered by the Universal Energy Facility (UEF) offers results-based grants to clean energy companies that electrify businesses and other services with solar and storage solutions for replacing polluting generators.</p></div></div></div></a></div><div role="listitem" class="news_cms-item w-dyn-item"><a data-w-id="2f93a325-a473-5347-aca7-4fb9d15467db" href="/posts/building-community-energy-projects-in-madagascar" class="news_content w-inline-block"><div class="news_item-link"><div class="news_image-wrapper"><img src="https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/65fa9e1883ad3cbf1b3bf602_american-public-power-association-513dBrMJ_5w-unsplash.webp" loading="lazy" alt="Building community energy projects in Madagascar" class="news_image"/></div><div class="news_item-content"><div class="news_item-content-top"><div class="news_category-wrapper"><div class="news_tag-dot"></div><div class="text-size-small text-weight-semibold">Mini-Grid</div></div><div class="news_title-wrapper"><h3 class="news_title">Building community energy projects in Madagascar</h3></div><p class="text-style-3lines">Mini-grid projects supported by grants from our Universal Energy Facility (UEF) have already connected households and businesses with clean and sustainable electricity. </p></div></div></div></a></div><div role="listitem" class="news_cms-item w-dyn-item"><a data-w-id="2f93a325-a473-5347-aca7-4fb9d15467db" href="/posts/universal-energy-facility-to-grant-up-to-usd-10-4-million-for-renewables-in-democratic-republic-of-the-congo-madagascar-and-sierra-leone" class="news_content w-inline-block"><div class="news_item-link"><div class="news_image-wrapper"><img src="https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/65efb311631dab03e0e8cafe_ANita.jpg" loading="lazy" alt="Universal Energy Facility to grant up to USD 10.4 million for renewables in Democratic Republic of the Congo, Madagascar and Sierra Leone " sizes="(max-width: 767px) 90vw, (max-width: 991px) 43vw, 28vw" srcset="https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/65efb311631dab03e0e8cafe_ANita-p-500.jpg 500w, https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/65efb311631dab03e0e8cafe_ANita-p-800.jpg 800w, https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/65efb311631dab03e0e8cafe_ANita-p-1080.jpg 1080w, https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/65efb311631dab03e0e8cafe_ANita.jpg 1280w" class="news_image"/></div><div class="news_item-content"><div class="news_item-content-top"><div class="news_category-wrapper"><div class="news_tag-dot"></div><div class="text-size-small text-weight-semibold">Mini-Grid</div></div><div class="news_title-wrapper"><h3 class="news_title">Universal Energy Facility to grant up to USD 10.4 million for renewables in Democratic Republic of the Congo, Madagascar and Sierra Leone </h3></div><p class="text-style-3lines">The Universal Energy Facility (UEF) – a multi-donor results-based financing facility managed by Sustainable Energy for All (SEforALL) – is signing several grant agreements with mini-grid companies in the Democratic Republic of the Congo (DRC), Madagascar and Sierra Leone in the coming weeks. The grantees will receive financial support to build solar mini-grids in communities without access to clean energy and where other polluting energy sources, such as diesel and petrol generators, charcoal and firewood, are common. </p></div></div></div></a></div></div></div></div></div></div></div></div></section><div class="section_dynamic-map"><div class="map_component"><div id="w-node-a84c13c4-3050-a9d5-a390-344c219bb8c1-04c2a6fd" class="map_content-left"><div class="locations-map_wrapper is--show w-dyn-list"><div id="location-list" fs-cmsload-element="list" fs-cmsnest-element="list" role="list" class="locations-map_list w-dyn-items"><div role="listitem" class="locations-map_item is--show w-dyn-item"><a href="/locations/madagascar" class="hide">Text Link</a><div id="madagascar" longitude="48.08564167" latitude="-15.7895417" class="location-map_card-wrap"><div class="location-map_card-text-wrap"><div class="locations-map_card-info"><div class="padding-global is-large"><div class="dynamic-map_vertical-padding"><div class="margin-bottom margin-xlarge"><div class="text-size-medium text-style-allcaps">Results-based Financing</div></div><div class="margin-bottom margin-small"><h2 class="heading-style-h1 text-color-yellow1 text-weight-bold">Madagascar</h2></div><div class="margin-bottom margin-large"><p class="text-size-medium">We currently deploying clean, affordable and reliable energy solutions in five countries.</p></div><div class="margin-bottom margin-large"><div class="map_item"><div class="margin-bottom margin-small"><div class="map_title-wrapper"><h3 class="map_yellow-subtitle">123</h3><h3>Mini-grid projects</h3></div></div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p></div><div class="map_item is-small"><div class="map_title-wrapper is-small"><div class="text-style-allcaps text-size-medium">Quantity of connections</div><div class="text-style-allcaps text-size-medium">123</div></div></div><div class="map_item is-small"><div class="map_title-wrapper is-small"><div class="text-style-allcaps text-size-medium">Public good</div><div class="text-style-allcaps text-size-medium w-dyn-bind-empty"></div></div></div></div><div class="margin-bottom margin-large"><div class="locations-map_gallery-wrapper"><div class="padding-bottom padding-large"><div class="flex-h locations-map_lightbox-wrapper"><h2 class="text-align-left text-color-yellow1 text-weight-bold">Media</h2><div class="text-color-yellow1 icon-embed-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 18 18"><title>scroll-x</title><g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke="currentcolor"><circle cx="9" cy="9" r="2.25"></circle><polyline points="4.25 11.75 1.5 9 4.25 6.25"></polyline><polyline points="13.75 11.75 16.5 9 13.75 6.25"></polyline></g></svg></div></div></div><div class="w-dyn-list"><script type="text/x-wf-template" id="wf-template-7d6a0a89-1cd3-5926-ec08-40fd253893ed">%3Cdiv%20role%3D%22listitem%22%20class%3D%22w-dyn-item%20w-dyn-repeater-item%22%3E%3Ca%20href%3D%22%23%22%20class%3D%22locations-map_lightbox-wrapper%20w-inline-block%20w-lightbox%22%3E%3Cimg%20alt%3D%22%22%20loading%3D%22lazy%22%20src%3D%22https%3A%2F%2Fcdn.prod.website-files.com%2F655df1a10e03f6efd674b632%2F660ff2353ded72f32a9eee61_img6.webp%22%20sizes%3D%22(max-width%3A%20479px)%20111.99653625488281px%2C%20(max-width%3A%20767px)%2033vw%2C%20240.00001525878906px%22%20srcset%3D%22https%3A%2F%2Fcdn.prod.website-files.com%2F655df1a10e03f6efd674b632%2F660ff2353ded72f32a9eee61_img6-p-500.webp%20500w%2C%20https%3A%2F%2Fcdn.prod.website-files.com%2F655df1a10e03f6efd674b632%2F660ff2353ded72f32a9eee61_img6-p-800.webp%20800w%2C%20https%3A%2F%2Fcdn.prod.website-files.com%2F655df1a10e03f6efd674b632%2F660ff2353ded72f32a9eee61_img6-p-1080.webp%201080w%2C%20https%3A%2F%2Fcdn.prod.website-files.com%2F655df1a10e03f6efd674b632%2F660ff2353ded72f32a9eee61_img6.webp%201159w%22%20class%3D%22locations-map_lightnox-image%22%2F%3E%3Cscript%20type%3D%22application%2Fjson%22%20class%3D%22w-json%22%3E%7B%0A%20%20%22items%22%3A%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22url%22%3A%20%22https%3A%2F%2Fuploads-ssl.webflow.com%2F655df1a10e03f6efd674b632%2F660ff2353ded72f32a9eee61_img6.webp%22%2C%0A%20%20%20%20%20%20%22type%22%3A%20%22image%22%0A%20%20%20%20%7D%0A%20%20%5D%2C%0A%20%20%22group%22%3A%20%22Location%20gallery%22%0A%7D%3C%2Fscript%3E%3C%2Fa%3E%3C%2Fdiv%3E</script><div role="list" class="location-map_gallery w-dyn-items"><div role="listitem" class="w-dyn-item w-dyn-repeater-item"><a href="#" class="locations-map_lightbox-wrapper w-inline-block w-lightbox"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/660ff2353ded72f32a9eee61_img6.webp" sizes="(max-width: 479px) 111.99653625488281px, (max-width: 767px) 33vw, 240.00001525878906px" srcset="https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/660ff2353ded72f32a9eee61_img6-p-500.webp 500w, https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/660ff2353ded72f32a9eee61_img6-p-800.webp 800w, https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/660ff2353ded72f32a9eee61_img6-p-1080.webp 1080w, https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/660ff2353ded72f32a9eee61_img6.webp 1159w" class="locations-map_lightnox-image"/><script type="application/json" class="w-json">{
+    "items": [
+      {
+        "url": "https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/660ff2353ded72f32a9eee61_img6.webp",
+        "type": "image"
+      }
+    ],
+    "group": "Location gallery"
+  }</script></a></div><div role="listitem" class="w-dyn-item w-dyn-repeater-item"><a href="#" class="locations-map_lightbox-wrapper w-inline-block w-lightbox"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/660ff240984e39e980f88ae1_Grid%20installation-2024060702-min%20(1).webp" sizes="(max-width: 479px) 111.99653625488281px, (max-width: 767px) 33vw, 240.00001525878906px" srcset="https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/660ff240984e39e980f88ae1_Grid%20installation-2024060702-min%20(1)-p-500.webp 500w, https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/660ff240984e39e980f88ae1_Grid%20installation-2024060702-min%20(1)-p-800.webp 800w, https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/660ff240984e39e980f88ae1_Grid%20installation-2024060702-min%20(1)-p-1080.webp 1080w, https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/660ff240984e39e980f88ae1_Grid%20installation-2024060702-min%20(1).webp 1600w" class="locations-map_lightnox-image"/><script type="application/json" class="w-json">{
+    "items": [
+      {
+        "url": "https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/660ff240984e39e980f88ae1_Grid%20installation-2024060702-min%20(1).webp",
+        "type": "image"
+      }
+    ],
+    "group": "Location gallery"
+  }</script></a></div></div><div class="w-dyn-hide w-dyn-empty"><div>No items found.</div></div></div></div></div><div class="margin-bottom margin-large z-index-2"><div class="locations-map_gallery-wrapper"><div class="map_gallery-title"><h2 class="text-align-left text-color-yellow1 text-weight-bold">Case study</h2><a href="/resources" class="button is-secondary is-icon w-inline-block"><div class="button-icon_component"><div class="button-icon_circle-wrapper"><div class="button-icon_circle"></div><div class="button-icon_icon-overlay"></div></div><div class="button-icon_line"></div></div><div>view all</div></a></div><a href="/posts/building-community-energy-projects-in-madagascar" class="news_content w-inline-block"><div class="news_item-link"><div class="news_image-wrapper"><img alt="" src="https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/65fa9e1883ad3cbf1b3bf602_american-public-power-association-513dBrMJ_5w-unsplash.webp" loading="lazy" class="news_image"/></div><div class="news_item-content is-alternate"><div class="news_item-content-top"><div class="news_category-wrapper"><div class="news_tag-dot"></div><div class="text-size-small text-weight-semibold">Case study</div></div><div class="news_title-wrapper"><h3 class="news_title">Building community energy projects in Madagascar</h3></div><p class="text-style-4lines">Mini-grid projects supported by grants from our Universal Energy Facility (UEF) have already connected households and businesses with clean and sustainable electricity. </p></div></div></div></a></div></div></div></div></div></div></div><div class="close-block"><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ph" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path fill="currentColor" d="M160 214a5.8 5.8 0 0 1-4.2-1.8l-80-80a5.8 5.8 0 0 1 0-8.4l80-80a5.9 5.9 0 0 1 8.4 8.4L88.5 128l75.7 75.8A6 6 0 0 1 160 214Z"></path></svg></div><div class="map-button">CLOSE</div></div></div><div role="listitem" class="locations-map_item is--show w-dyn-item"><a href="/locations/nigeria" class="hide">Text Link</a><div id="nigeria" longitude="8.653626" latitude="7.961300" class="location-map_card-wrap"><div class="location-map_card-text-wrap"><div class="locations-map_card-info"><div class="padding-global is-large"><div class="dynamic-map_vertical-padding"><div class="margin-bottom margin-xlarge"><div class="text-size-medium text-style-allcaps">Results-based Financing</div></div><div class="margin-bottom margin-small"><h2 class="heading-style-h1 text-color-yellow1 text-weight-bold">Nigeria</h2></div><div class="margin-bottom margin-large"><p class="text-size-medium">We currently deploying clean, affordable and reliable energy solutions in five countries.</p></div><div class="margin-bottom margin-large"><div class="map_item"><div class="margin-bottom margin-small"><div class="map_title-wrapper"><h3 class="map_yellow-subtitle">58</h3><h3>Mini-grid projects</h3></div></div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p></div><div class="map_item is-small"><div class="map_title-wrapper is-small"><div class="text-style-allcaps text-size-medium">Quantity of connections</div><div class="text-style-allcaps text-size-medium">58</div></div></div><div class="map_item is-small"><div class="map_title-wrapper is-small"><div class="text-style-allcaps text-size-medium">Public good</div><div class="text-style-allcaps text-size-medium w-dyn-bind-empty"></div></div></div></div><div class="margin-bottom margin-large"><div class="locations-map_gallery-wrapper"><div class="padding-bottom padding-large"><div class="flex-h locations-map_lightbox-wrapper"><h2 class="text-align-left text-color-yellow1 text-weight-bold">Media</h2><div class="text-color-yellow1 icon-embed-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 18 18"><title>scroll-x</title><g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke="currentcolor"><circle cx="9" cy="9" r="2.25"></circle><polyline points="4.25 11.75 1.5 9 4.25 6.25"></polyline><polyline points="13.75 11.75 16.5 9 13.75 6.25"></polyline></g></svg></div></div></div><div class="w-dyn-list"><script type="text/x-wf-template" id="wf-template-7d6a0a89-1cd3-5926-ec08-40fd253893ed">%3Cdiv%20role%3D%22listitem%22%20class%3D%22w-dyn-item%20w-dyn-repeater-item%22%3E%3Ca%20href%3D%22%23%22%20class%3D%22locations-map_lightbox-wrapper%20w-inline-block%20w-lightbox%22%3E%3Cimg%20alt%3D%22%22%20loading%3D%22lazy%22%20src%3D%22https%3A%2F%2Fcdn.prod.website-files.com%2F655df1a10e03f6efd674b632%2F660ff260a52b3b8fdfeeb948_Grid%2520installation-2024045042-min.webp%22%20sizes%3D%22(max-width%3A%20479px)%20111.99653625488281px%2C%20(max-width%3A%20767px)%2033vw%2C%20240.00001525878906px%22%20srcset%3D%22https%3A%2F%2Fcdn.prod.website-files.com%2F655df1a10e03f6efd674b632%2F660ff260a52b3b8fdfeeb948_Grid%2520installation-2024045042-min-p-500.webp%20500w%2C%20https%3A%2F%2Fcdn.prod.website-files.com%2F655df1a10e03f6efd674b632%2F660ff260a52b3b8fdfeeb948_Grid%2520installation-2024045042-min-p-800.webp%20800w%2C%20https%3A%2F%2Fcdn.prod.website-files.com%2F655df1a10e03f6efd674b632%2F660ff260a52b3b8fdfeeb948_Grid%2520installation-2024045042-min-p-1080.webp%201080w%2C%20https%3A%2F%2Fcdn.prod.website-files.com%2F655df1a10e03f6efd674b632%2F660ff260a52b3b8fdfeeb948_Grid%2520installation-2024045042-min-p-1600.webp%201600w%2C%20https%3A%2F%2Fcdn.prod.website-files.com%2F655df1a10e03f6efd674b632%2F660ff260a52b3b8fdfeeb948_Grid%2520installation-2024045042-min.webp%202000w%22%20class%3D%22locations-map_lightnox-image%22%2F%3E%3Cscript%20type%3D%22application%2Fjson%22%20class%3D%22w-json%22%3E%7B%0A%20%20%22items%22%3A%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22url%22%3A%20%22https%3A%2F%2Fuploads-ssl.webflow.com%2F655df1a10e03f6efd674b632%2F660ff260a52b3b8fdfeeb948_Grid%2520installation-2024045042-min.webp%22%2C%0A%20%20%20%20%20%20%22type%22%3A%20%22image%22%0A%20%20%20%20%7D%0A%20%20%5D%2C%0A%20%20%22group%22%3A%20%22Location%20gallery%22%0A%7D%3C%2Fscript%3E%3C%2Fa%3E%3C%2Fdiv%3E</script><div role="list" class="location-map_gallery w-dyn-items"><div role="listitem" class="w-dyn-item w-dyn-repeater-item"><a href="#" class="locations-map_lightbox-wrapper w-inline-block w-lightbox"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/660ff260a52b3b8fdfeeb948_Grid%20installation-2024045042-min.webp" sizes="(max-width: 479px) 111.99653625488281px, (max-width: 767px) 33vw, 240.00001525878906px" srcset="https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/660ff260a52b3b8fdfeeb948_Grid%20installation-2024045042-min-p-500.webp 500w, https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/660ff260a52b3b8fdfeeb948_Grid%20installation-2024045042-min-p-800.webp 800w, https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/660ff260a52b3b8fdfeeb948_Grid%20installation-2024045042-min-p-1080.webp 1080w, https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/660ff260a52b3b8fdfeeb948_Grid%20installation-2024045042-min-p-1600.webp 1600w, https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/660ff260a52b3b8fdfeeb948_Grid%20installation-2024045042-min.webp 2000w" class="locations-map_lightnox-image"/><script type="application/json" class="w-json">{
+    "items": [
+      {
+        "url": "https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/660ff260a52b3b8fdfeeb948_Grid%20installation-2024045042-min.webp",
+        "type": "image"
+      }
+    ],
+    "group": "Location gallery"
+  }</script></a></div></div><div class="w-dyn-hide w-dyn-empty"><div>No items found.</div></div></div></div></div><div class="margin-bottom margin-large z-index-2"><div class="locations-map_gallery-wrapper"><div class="map_gallery-title"><h2 class="text-align-left text-color-yellow1 text-weight-bold">Case study</h2><a href="/resources" class="button is-secondary is-icon w-inline-block"><div class="button-icon_component"><div class="button-icon_circle-wrapper"><div class="button-icon_circle"></div><div class="button-icon_icon-overlay"></div></div><div class="button-icon_line"></div></div><div>view all</div></a></div><a href="/posts/displacing-petrol-diesel-generators-with-solar-in-nigeria" class="news_content w-inline-block"><div class="news_item-link"><div class="news_image-wrapper"><img alt="" src="https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/65faa2432c784424eced9977_Screenshot%202024-03-20%20at%2009.45.14.webp" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 991px) 78vw, 34vw" srcset="https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/65faa2432c784424eced9977_Screenshot%202024-03-20%20at%2009.45.14-p-500.webp 500w, https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/65faa2432c784424eced9977_Screenshot%202024-03-20%20at%2009.45.14-p-800.webp 800w, https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/65faa2432c784424eced9977_Screenshot%202024-03-20%20at%2009.45.14-p-1080.webp 1080w, https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/65faa2432c784424eced9977_Screenshot%202024-03-20%20at%2009.45.14-p-1600.webp 1600w, https://cdn.prod.website-files.com/655df1a10e03f6efd674b632/65faa2432c784424eced9977_Screenshot%202024-03-20%20at%2009.45.14.webp 1704w" class="news_image"/></div><div class="news_item-content is-alternate"><div class="news_item-content-top"><div class="news_category-wrapper"><div class="news_tag-dot"></div><div class="text-size-small text-weight-semibold">Case study</div></div><div class="news_title-wrapper"><h3 class="news_title">Displacing petrol and diesel generators with solar in Nigeria</h3></div><p class="text-style-4lines">A new programme offered by the Universal Energy Facility (UEF) offers results-based grants to clean energy companies that electrify businesses and other services with solar and storage solutions for replacing polluting generators.</p></div></div></div></a></div></div></div></div></div></div></div><div class="close-block"><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ph" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path fill="currentColor" d="M160 214a5.8 5.8 0 0 1-4.2-1.8l-80-80a5.8 5.8 0 0 1 0-8.4l80-80a5.9 5.9 0 0 1 8.4 8.4L88.5 128l75.7 75.8A6 6 0 0 1 160 214Z"></path></svg></div><div class="map-button">CLOSE</div></div></div></div></div><div id="w-node-bff80713-c306-9ae9-69fa-d1b03e3401f0-04c2a6fd" class="padding-section-xxlarge"><div id="w-node-fea9850d-171a-c300-f65d-0461985bbbd4-985bbbd4" class="map_content-3"><div class="margin-bottom margin-xlarge"><div class="text-size-medium text-style-allcaps">Results-based Financing</div></div><div class="margin-bottom margin-small"><h2 class="heading-style-h1 text-color-yellow1 text-weight-bold">Our impact</h2></div><div class="margin-bottom margin-large"><p class="text-size-medium">The UEF currently has projects running in five Sub-Saharan African countries.</p></div><div class="map_list"><div class="map_item animate_bottom1"><div class="margin-bottom margin-small"><div class="map_title-wrapper"><h3 class="heading-style-h2 text-color-yellow1 text-style-dosis text-weight-bold">4</h3><h3>Mini-grid projects</h3></div></div><p>The deployment of mini-grids in rural regions catalyzes socio-economic development by fostering clean energy adoption and illuminating pathways to improved living standards.</p></div><div class="map_item animate_bottom1"><div class="margin-bottom margin-small"><div class="map_title-wrapper"><h3 class="heading-style-h2 text-color-yellow1 text-style-dosis text-weight-bold">3004</h3><h3>SSPU Projects</h3></div></div><p>The deployment of stand-alone solar units for <strong>Small and medium-sized enterprises</strong> (SMEs) in underserved communities fuel prosperity.</p></div><div class="map_item is-last animate_bottom1"><div class="margin-bottom margin-small"><div class="map_title-wrapper"><h3 class="heading-style-h2 text-color-yellow1 text-style-dosis text-weight-bold">25</h3><h3>Clean Cooking Projects</h3></div></div><p>Shifting to clean cooking with renewable energy promotes healthier homes, empowers communities, and deals a powerful blow to climate change by slashing greenhouse gas emissions and black carbon.</p></div></div><div class="margin-top margin-xlarge"><a data-w-id="fea9850d-171a-c300-f65d-0461985bbbfe" href="/impact" class="button w-inline-block"><div class="z-index-2">Discover our impact</div><div class="button-background1"></div><div class="button-background2"></div></a></div></div></div></div><div id="map" class="mapbox-wrap-5 is-events-none"></div></div><div class="round-edges_item is-absolute"></div><div class="round-edges_item is-absolute is-bottom"></div></div><section class="section_feature"><div class="padding-global"><div class="container-large"><div class="padding-section-xlarge"><div class="w-layout-grid feature_component"><div class="feature_content"><div class="margin-bottom margin-small"><h2 class="animate_bottom1">Join <span class="text-color-yellow1 text-weight-bold">our mission</span></h2></div><div class="margin-bottom margin-small animate_bottom1"><p class="text-size-medium">We believe that partnerships are essential for driving progress towards our common objectives.</p></div><div class="button-group animate_bottom2"><a data-w-id="25e28b3f-3cb0-867b-6be0-421627356991" href="mailto:uef@seforall.org " class="button w-inline-block"><div class="z-index-2">Talk to us</div><div class="button-background1"></div><div class="button-background2"></div></a><a href="/about-us" class="button is-secondary is-icon w-inline-block"><div class="button-icon_component"><div class="button-icon_circle-wrapper"><div class="button-icon_circle"></div><div class="button-icon_icon-overlay"></div></div><div class="button-icon_line"></div></div><div>Learn more</div></a></div></div><div class="feature_image-wrapper animate_bottom2"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/660fef54ee5c408ad23ed25e_UnionZ.webp" loading="lazy" sizes="(max-width: 767px) 215.99827575683594px, 40vw" srcset="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/660fef54ee5c408ad23ed25e_UnionZ-p-500.webp 500w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/660fef54ee5c408ad23ed25e_UnionZ-p-800.webp 800w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/660fef54ee5c408ad23ed25e_UnionZ-p-1080.webp 1080w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/660fef54ee5c408ad23ed25e_UnionZ-p-1600.webp 1600w, https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/660fef54ee5c408ad23ed25e_UnionZ.webp 1831w" alt="" class="feature_image"/></div></div></div></div></div></section></main><footer class="footer_component"><div class="round-edges_wrapper"><div class="round-edges_item"></div></div><div class="padding-top padding-xlarge z-index-2"><div class="padding-global"><div class="container-large"><div class="padding-top padding-huge"><div class="footer6_newsletter-wrapper"><div class="footer_newsletter-text-wrapper animate_left1"><div class="text-weight-semibold text-size-medium">Stay informed, subscribe</div><p>Get the latest news and updates from our organization</p></div><div class="footer_form-block animate_left2 w-form"><form id="email-form" name="email-form" data-name="Email Form" method="get" class="footer_form" data-wf-page-id="654aff9d488b25e704c2a6fd" data-wf-element-id="15a3b89f-acca-a4f5-2e83-cfcfeae0a28c"><input class="form-input w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="Enter your email" type="email" id="email-2" required=""/><a data-w-id="25e28b3f-3cb0-867b-6be0-421627356991" href="#" class="button w-inline-block"><div class="z-index-2">Talk to us</div><div class="button-background1"></div><div class="button-background2"></div></a><div class="text-size-tiny">By subscribing, you agree to our Privacy Policy</div><a href="#" class="hide w-button">Subscribe</a></form><div class="success-message is-white w-form-done"><div>Thank you! Your submission has been received!</div></div><div class="error-message w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div></div></div></div></div></div><div class="footer_separator"></div><div class="padding-global z-index-2"><div class="container-large"><div class="padding-vertical padding-xxlarge"><div class="padding-bottom padding-xxlarge"><div class="w-layout-grid footer_top-wrapper"><div id="w-node-_15a3b89f-acca-a4f5-2e83-cfcfeae0a29f-eae0a281" class="footer_logo-content animate_left1"><a href="/about-us" class="footer_logo-wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/655df4394951cfa12469fb01_Logo2.svg" loading="lazy" alt="Universal Energy Facility" class="footer_logo"/></a><a href="/" aria-current="page" class="footer_logo-wrapper w-inline-block w--current"><img src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/655efbe4c77143f01b4aeced_logo1_1.svg" loading="lazy" alt="Managed by sustainable energy for all" class="footer_logo"/></a></div><div id="w-node-_15a3b89f-acca-a4f5-2e83-cfcfeae0a2a4-eae0a281" class="footer_content animate_left2"><div class="margin-bottom margin-large"><div class="margin-bottom margin-xxsmall"><div class="text-weight-bold text-color-yellow1">Address:</div></div><p class="text-size-regular"><a href="#">Andromeda Tower 15th floor<br/>Donau City Strasse 6<br/>1220, Vienna  Austria<br/><br/>575 Lexington Ave, New York, NY 10022, USA</a></p></div><div class="margin-bottom margin-large"><div class="margin-bottom margin-xxsmall"><div class="text-weight-bold text-color-yellow1">Contact:</div></div><p class="text-size-regular">+43 676 846 727 200<br/>uef@seforall.org</p></div><div class="socials_list"><a href="#" class="socials_icon-wrapper w-inline-block"><div class="socials_icon w-embed"><svg width="100%" height="100%" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M20.3438 10.0733C20.3438 4.51672 15.8666 0.012207 10.3438 0.012207C4.8209 0.012207 0.34375 4.51672 0.34375 10.0733C0.34375 15.095 4.00059 19.2574 8.78125 20.0122V12.9816H6.24219V10.0733H8.78125V7.85673C8.78125 5.33517 10.2743 3.94233 12.5583 3.94233C13.6525 3.94233 14.7969 4.13884 14.7969 4.13884V6.61482H13.5359C12.2937 6.61482 11.9062 7.39043 11.9062 8.18611V10.0733H14.6796L14.2364 12.9816H11.9062V20.0122C16.687 19.2574 20.3438 15.0952 20.3438 10.0733Z" fill="currentcolor"/>
+  </svg></div></a><a href="#" class="socials_icon-wrapper w-inline-block"><div class="socials_icon w-embed"><svg width="100%" height="100%" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M16.3438 4.01221H8.34375C5.58233 4.01221 3.34375 6.25079 3.34375 9.01221V17.0122C3.34375 19.7736 5.58233 22.0122 8.34375 22.0122H16.3438C19.1052 22.0122 21.3438 19.7736 21.3438 17.0122V9.01221C21.3438 6.25079 19.1052 4.01221 16.3438 4.01221ZM19.5938 17.0122C19.5882 18.8048 18.1363 20.2567 16.3438 20.2622H8.34375C6.5511 20.2567 5.09924 18.8048 5.09375 17.0122V9.01221C5.09924 7.21956 6.5511 5.7677 8.34375 5.76221H16.3438C18.1363 5.7677 19.5882 7.21956 19.5938 9.01221V17.0122ZM17.0938 9.26221C17.646 9.26221 18.0938 8.81449 18.0938 8.26221C18.0938 7.70993 17.646 7.26221 17.0938 7.26221C16.5415 7.26221 16.0938 7.70993 16.0938 8.26221C16.0938 8.81449 16.5415 9.26221 17.0938 9.26221ZM12.3438 8.51221C9.85847 8.51221 7.84375 10.5269 7.84375 13.0122C7.84375 15.4975 9.85847 17.5122 12.3438 17.5122C14.8291 17.5122 16.8438 15.4975 16.8438 13.0122C16.8464 11.8179 16.3731 10.6718 15.5287 9.82729C14.6842 8.9828 13.538 8.50955 12.3438 8.51221ZM9.59375 13.0122C9.59375 14.531 10.825 15.7622 12.3438 15.7622C13.8625 15.7622 15.0938 14.531 15.0938 13.0122C15.0938 11.4934 13.8625 10.2622 12.3438 10.2622C10.825 10.2622 9.59375 11.4934 9.59375 13.0122Z" fill="currentcolor"/>
+  </svg></div></a><a href="#" class="socials_icon-wrapper w-inline-block"><div class="socials_icon w-embed"><svg width="100%" height="100%" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M17.5198 5.01221H20.2799L14.2499 11.7896L21.3438 21.0122H15.7893L11.4389 15.4188L6.46098 21.0122H3.69919L10.1489 13.763L3.34375 5.01221H9.0392L12.9717 10.1248L17.5198 5.01221ZM16.5511 19.3876H18.0805L8.20816 6.55149H6.56695L16.5511 19.3876Z" fill="currentcolor"/>
+  </svg></div></a><a href="#" class="socials_icon-wrapper w-inline-block"><div class="socials_icon w-embed"><svg width="100%" height="100%" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M4.84375 4.01221C4.01532 4.01221 3.34375 4.68378 3.34375 5.51221V20.5122C3.34375 21.3406 4.01532 22.0122 4.84375 22.0122H19.8438C20.6721 22.0122 21.3438 21.3406 21.3438 20.5122V5.51221C21.3438 4.68378 20.6721 4.01221 19.8438 4.01221H4.84375ZM8.86451 8.01493C8.87014 8.97118 8.15436 9.5604 7.30498 9.55618C6.50482 9.55196 5.80732 8.91493 5.81154 8.01634C5.81576 7.17118 6.48373 6.49196 7.35139 6.51165C8.2317 6.53134 8.87014 7.17681 8.86451 8.01493ZM12.6235 10.774H10.1035H10.102V19.3338H12.7654V19.1341C12.7654 18.7542 12.7652 18.3742 12.7648 17.9941C12.764 16.9803 12.7631 15.9654 12.7683 14.9519C12.7697 14.7058 12.7809 14.4499 12.8442 14.215C13.0819 13.3375 13.8709 12.7708 14.7512 12.9101C15.3165 12.9986 15.6904 13.3263 15.8479 13.8593C15.9451 14.1925 15.9887 14.5511 15.9929 14.8985C16.0043 15.9461 16.0027 16.9937 16.001 18.0414C16.0005 18.4112 15.9999 18.7812 15.9999 19.151V19.3324H18.6717V19.1271C18.6717 18.6751 18.6715 18.2232 18.6712 17.7713C18.6707 16.6418 18.6701 15.5123 18.6731 14.3824C18.6745 13.8719 18.6198 13.3685 18.4946 12.8749C18.3076 12.1408 17.9208 11.5333 17.2922 11.0946C16.8464 10.7824 16.357 10.5813 15.8101 10.5588C15.7478 10.5562 15.6849 10.5528 15.6219 10.5494C15.3421 10.5343 15.0578 10.5189 14.7905 10.5729C14.0254 10.7261 13.3533 11.0763 12.8456 11.6936C12.7866 11.7644 12.7289 11.8363 12.6428 11.9436L12.6235 11.9679V10.774ZM6.02539 19.3366H8.67617V10.7795H6.02539V19.3366Z" fill="currentcolor"/>
+  </svg></div></a><a href="#" class="socials_icon-wrapper w-inline-block"><div class="socials_icon w-embed"><svg width="100%" height="100%" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M21.9371 7.97254C21.8232 7.54994 21.6006 7.16454 21.2914 6.85471C20.9823 6.54487 20.5974 6.3214 20.1751 6.20654C18.6091 5.77654 12.3441 5.76954 12.3441 5.76954C12.3441 5.76954 6.08008 5.76254 4.51308 6.17354C4.091 6.29369 3.7069 6.52032 3.39765 6.83167C3.08839 7.14303 2.86437 7.52866 2.74708 7.95154C2.33408 9.51754 2.33008 12.7655 2.33008 12.7655C2.33008 12.7655 2.32608 16.0295 2.73608 17.5795C2.96608 18.4365 3.64108 19.1135 4.49908 19.3445C6.08108 19.7745 12.3291 19.7815 12.3291 19.7815C12.3291 19.7815 18.5941 19.7885 20.1601 19.3785C20.5826 19.2639 20.9678 19.0409 21.2777 18.7317C21.5876 18.4225 21.8115 18.0378 21.9271 17.6155C22.3411 16.0505 22.3441 12.8035 22.3441 12.8035C22.3441 12.8035 22.3641 9.53854 21.9371 7.97254ZM10.3401 15.7745L10.3451 9.77454L15.5521 12.7795L10.3401 15.7745Z" fill="currentcolor"/>
+  </svg></div></a></div></div><div class="footer_link-list animate_left3"><a href="/" aria-current="page" class="navbar_link is-footer w-inline-block w--current"><div class="navlink_dot"></div><div class="navlink_bg1"><div color="" class="navlink_label">Home</div><div class="navlink_gradient-label is-reverse">Home</div></div></a><a href="/about-us" class="navbar_link is-footer w-inline-block"><div class="navlink_dot"></div><div class="navlink_bg1"><div color="" class="navlink_label">About</div><div class="navlink_gradient-label is-reverse">About</div></div></a><a href="/programmes" class="navbar_link is-footer w-inline-block"><div class="navlink_dot"></div><div class="navlink_bg1"><div color="" class="navlink_label">programs</div><div class="navlink_gradient-label is-reverse">programs</div></div></a><a href="/media" class="navbar_link is-footer w-inline-block"><div class="navlink_dot"></div><div class="navlink_bg1"><div color="" class="navlink_label">media</div><div class="navlink_gradient-label is-reverse">media</div></div></a><a href="/impact" class="navbar_link is-footer w-inline-block"><div class="navlink_dot"></div><div class="navlink_bg1"><div color="" class="navlink_label">impact</div><div class="navlink_gradient-label is-reverse">impact</div></div></a><a href="/resources" class="navbar_link is-footer w-inline-block"><div class="navlink_dot"></div><div class="navlink_bg1"><div color="" class="navlink_label">resources</div><div class="navlink_gradient-label is-reverse">resources</div></div></a></div></div></div><div class="padding-top padding-medium"><div class="footer_bottom-wrapper"><div id="w-node-_15a3b89f-acca-a4f5-2e83-cfcfeae0a2cf-eae0a281" class="footer_credit-text">© 2023 Universal Energy Facility. All rights reserved.</div><div class="footer_legal-wrapper"><a href="#" class="footer_legal-link">Privacy Policy</a><a href="#" class="footer_legal-link">Terms of Service</a></div></div></div></div></div></div></footer></div><script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=654aff9d488b25e704c2a6aa" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/654aff9d488b25e704c2a6aa/js/webflow.15401e832.js" type="text/javascript"></script><script src="https://unpkg.com/split-type"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+  <script>
+  window.addEventListener("DOMContentLoaded", (event) => {
+    // Split text into spans
+    let typeSplit = new SplitType("[text-split]", {
+      types: "words, chars",
+      tagName: "span"
+    });
+  
+    // Link timelines to scroll position
+    function createScrollTrigger(triggerElement, timeline) {
+      // Reset tl when scroll out of view past bottom of screen
+      ScrollTrigger.create({
+        trigger: triggerElement,
+        start: "top bottom",
+        onLeaveBack: () => {
+          timeline.progress(0);
+          timeline.pause();
+        }
+      });
+      // Play tl when scrolled into view (60% from top of screen)
+      ScrollTrigger.create({
+        trigger: triggerElement,
+        start: "top 60%",
+        onEnter: () => timeline.play()
+      });
+    }
+  
+    $("[words-slide-up]").each(function (index) {
+      let tl = gsap.timeline({ paused: true });
+      tl.from($(this).find(".word"), { opacity: 0, yPercent: 100, duration: 0.5, ease: "back.out(2)", stagger: { amount: 0.5 } });
+      createScrollTrigger($(this), tl);
+    });
+  
+    $("[words-rotate-in]").each(function (index) {
+      let tl = gsap.timeline({ paused: true });
+      tl.set($(this).find(".word"), { transformPerspective: 1000 });
+      tl.from($(this).find(".word"), { rotationX: -90, duration: 0.6, ease: "power2.out", stagger: { amount: 0.6 } });
+      createScrollTrigger($(this), tl);
+    });
+  
+    $("[words-slide-from-right]").each(function (index) {
+      let tl = gsap.timeline({ paused: true });
+      tl.from($(this).find(".word"), { opacity: 0, x: "1em", duration: 0.6, ease: "power2.out", stagger: { amount: 0.2 } });
+      createScrollTrigger($(this), tl);
+    });
+  
+    $("[letters-slide-up]").each(function (index) {
+      let tl = gsap.timeline({ paused: true });
+      tl.from($(this).find(".char"), { yPercent: 100, duration: 0.2, ease: "power1.out", stagger: { amount: 0.6 } });
+      createScrollTrigger($(this), tl);
+    });
+  
+    $("[letters-slide-down]").each(function (index) {
+      let tl = gsap.timeline({ paused: true });
+      tl.from($(this).find(".char"), { yPercent: -120, duration: 0.3, ease: "power1.out", stagger: { amount: 0.7 } });
+      createScrollTrigger($(this), tl);
+    });
+  
+    $("[letters-fade-in]").each(function (index) {
+      let tl = gsap.timeline({ paused: true });
+      tl.from($(this).find(".char"), { opacity: 0, duration: 0.2, ease: "power1.out", stagger: { amount: 0.8 } });
+      createScrollTrigger($(this), tl);
+    });
+  
+    $("[letters-fade-in-random]").each(function (index) {
+      let tl = gsap.timeline({ paused: true });
+      tl.from($(this).find(".char"), { opacity: 0, duration: 0.05, ease: "power1.out", stagger: { amount: 0.4, from: "random" } });
+      createScrollTrigger($(this), tl);
+    });
+  
+    $("[scrub-each-word]").each(function (index) {
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: $(this),
+          start: "top 90%",
+          end: "top center",
+          scrub: true
+        }
+      });
+      tl.from($(this).find(".word"), { opacity: 0.2, duration: 0.2, ease: "power1.out", stagger: { each: 0.4 } });
+    });
+  
+    // Avoid flash of unstyled content
+    gsap.set("[text-split]", { opacity: 1 });
+  });
+  </script><script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+  
+  <script>
+    var typed = new Typed(".typed-words", {
+    strings: ["affordable", "reliable", "modern", "sustainable"],
+    typeSpeed: 75,
+    backSpeed: 50,
+    backDelay: 800,
+    startDelay: 500,
+    loop: true,
+    showCursor: false,
+    cursorChar: "|",
+    attr: null,
+  });
+  </script>
+  
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  
+  <script src="index.js"></script></body></html>
