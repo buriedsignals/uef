@@ -192,25 +192,6 @@ function addMapPoints() {
     const locationLat = el.getAttribute("latitude");
     const locationLong = el.getAttribute("longitude");
     const coordinates = [locationLong, locationLat];
-
-    function formatNumber(num) {
-      if (num >= 1000) {
-        return (num / 1000).toFixed(1) + 'k';
-      }
-      return num;
-    }
-
-    if (miniGridProjects) {
-      const elTitle = el.querySelectorAll('.map_title-wrapper h3')
-      elTitle[0].innerHTML = miniGridProjects
-      elTitle[1].innerHTML = "Mini-grid projects"
-    } else if (SSPU) {
-      const elTitle = el.querySelectorAll('.map_title-wrapper h3')
-      elTitle[0].innerHTML = SSPU
-      elTitle[1].innerHTML = "SSPU"
-    }
-    const elConnections = el.querySelectorAll('.map_item')[1].querySelectorAll('div')[2]
-    elConnections.innerHTML = formatNumber(connectionsLength)
       
     let zoom = 1
     if (mq.matches) {
