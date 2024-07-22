@@ -239,10 +239,10 @@ function addMapPoints() {
       const coordinates = [locationLong, locationLat];
       
       const description = `
-        <div class="mapbox-header">
-          <div class="text-size-large text-weight-light mapbox-title">${ e.features[0].properties['name'] }</div>
-        </div>
         <div class="mapbox_content">
+          <div class="mapbox_row">
+            <div class="text-size-large text-weight-light mapbox-title">${ e.features[0].properties['name'] }</div>
+          </div>
           <div class="mapbox_row">
             <div class="icon-embed-xxsmall w-embed">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -297,10 +297,10 @@ function addMapPoints() {
       const coordinates = [locationLong, locationLat];
       
       const description = `
-        <div class="mapbox-header">
-          <div class="text-size-large text-weight-light mapbox-title">${ e.features[0].properties['name'] }</div>
-        </div>
         <div class="mapbox_content">
+          <div class="mapbox_row">
+            <div class="text-size-large text-weight-light mapbox-title">${ e.features[0].properties['name'] }</div>
+          </div>
           <div class="mapbox_row">
             <div class="icon-embed-xxsmall w-embed">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -359,10 +359,10 @@ function addMapPoints() {
       const coordinates = [locationLong, locationLat];
       
       const description = `
-        <div class="mapbox-header">
-          <div class="text-size-large text-weight-light mapbox-title">${ e.features[0].properties['name'] }</div>
-        </div>
         <div class="mapbox_content">
+          <div class="mapbox_row">
+            <div class="text-size-large text-weight-light mapbox-title">${ e.features[0].properties['name'] }</div>
+          </div>
           <div class="mapbox_row">
             <div class="icon-embed-xxsmall w-embed">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -416,10 +416,10 @@ function addMapPoints() {
       const coordinates = [locationLong, locationLat];
       
       const description = `
-        <div class="mapbox-header">
-          <div class="text-size-large text-weight-light mapbox-title">${ e.features[0].properties['name'] }</div>
-        </div>
         <div class="mapbox_content">
+          <div class="mapbox_row">
+            <div class="text-size-large text-weight-light mapbox-title">${ e.features[0].properties['name'] }</div>
+          </div>
           <div class="mapbox_row">
             <div class="icon-embed-xxsmall w-embed">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -467,11 +467,23 @@ function addMapPoints() {
     
     //find ID of collection item in array
     const description = `
-      <div class="mapbox-header">
-        <div class="text-size-large text-weight-light mapbox-title">${ e.features[0].properties['Name'] }</div>
-        ${ e.features[0].properties['Organization'] ? `<div class="mapbox-organisation">${ e.features[0].properties['Organization'] }</div>`: '' }
-      </div>
       <div class="mapbox_content">
+        <div class="mapbox_row">
+          <div class="text-size-large text-weight-light mapbox-title">${ e.features[0].properties['Name'] }</div>
+          ${ e.features[0].properties['Organization'] ? `<div class="mapbox-organisation">${ e.features[0].properties['Organization'] }</div>`: '' }
+        </div>
+        ${ e.features[0].properties['Previous Energy Source'] ? `
+          <div class="mapbox_row">
+            <div class="icon-embed-xxsmall w-embed">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.2422 9.93757C13.2422 12.1812 11.4743 14 9.29347 14C7.11265 14 5.34475 12.1812 5.34475 9.93757C5.34475 8.29383 7.46419 4.38615 8.59755 2.41402C8.9148 1.86199 9.67214 1.86199 9.98939 2.41402C11.1228 4.38615 13.2422 8.29383 13.2422 9.93757Z" fill="#DB4405"/>
+                <path d="M6.45175 4.5675C6.13086 3.96392 5.81135 3.4034 5.55987 2.97381C5.33318 2.58672 4.79222 2.58672 4.56553 2.97381C3.75601 4.35667 2.24219 7.09745 2.24219 8.24965C2.24219 9.67275 3.27481 10.8521 4.6242 11.0647C4.54212 10.7031 4.4986 10.3256 4.4986 9.93798C4.4986 9.3718 4.67268 8.70361 4.89606 8.05525C4.95721 7.8773 5.02441 7.6948 5.09658 7.50891C5.296 6.99487 5.5326 6.4559 5.78435 5.92032C5.99727 5.46693 6.22368 5.01126 6.45175 4.5675Z" fill="#DB4405"/>
+                <path d="M6.93129 5.50433C7.45435 6.57321 7.88321 7.63643 7.88321 8.24965C7.88321 9.67388 6.84948 10.8533 5.49872 11.0647C5.39846 10.7071 5.34475 10.3286 5.34475 9.93757C5.34475 8.96333 6.08899 7.19437 6.93129 5.50433Z" fill="#DB4405"/>
+              </svg>
+            </div>
+            <div class="mapbox_label">Previous: ${ e.features[0].properties['Previous Energy Source'] }</div>
+          </div>
+        ` : ''}
         ${ e.features[0].properties['Customer Category'] ? `
           <div class="mapbox_row">
             <div class="icon-embed-xxsmall w-embed">
@@ -485,26 +497,6 @@ function addMapPoints() {
             <div class="mapbox_label">Category: ${ e.features[0].properties['Customer Category'] }</div>
           </div>
         ` : ''}
-        ${ e.features[0].properties['Gender'] ? `
-          <div class="mapbox_row">
-            <div class="icon-embed-xxsmall w-embed">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.36321 10.3841C11.4024 10.3841 13.0555 8.73102 13.0555 6.69182C13.0555 4.65261 11.4024 2.99951 9.36321 2.99951C7.324 2.99951 5.6709 4.65261 5.6709 6.69182C5.6709 8.73102 7.324 10.3841 9.36321 10.3841ZM9.36321 10.3841V14.9995M12.1324 12.689H6.59398" stroke="#DB4405" stroke-width="1.75" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div class="mapbox_label">Gender: ${ e.features[0].properties['Gender'] }</div>
-          </div>
-        ` : ''}
-        ${ e.features[0].properties['SSPU Total Wattage'] ? `
-          <div class="mapbox_row">
-            <div class="icon-embed-xxsmall w-embed">
-              <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14.6956 5.00003C15.229 5.53337 15.229 6.40003 14.6956 6.8667L13.1825 8.37981C12.9873 8.57507 12.6707 8.57507 12.4754 8.37981L7.98253 3.88692C7.78726 3.69166 7.78726 3.37507 7.98253 3.17981L9.49564 1.6667C10.029 1.13337 10.8956 1.13337 11.3623 1.6667L12.5623 2.8667L14.2088 1.22025C14.404 1.02499 14.7206 1.02499 14.9159 1.22025L15.1421 1.44648C15.3373 1.64174 15.3373 1.95832 15.1421 2.15359L13.4956 3.80003L14.6956 5.00003ZM10.829 8.8667L9.89564 7.93337L8.02897 9.80003L6.62897 8.40003L8.49564 6.53337L7.5623 5.60003L5.69564 7.4667L5.04878 6.86296C4.85181 6.67912 4.54459 6.68442 4.35407 6.87494L2.82897 8.40003C2.29564 8.93337 2.29564 9.80003 2.82897 10.2667L4.02897 11.4667L1.71586 13.7798C1.5206 13.9751 1.5206 14.2917 1.71586 14.4869L1.94208 14.7131C2.13735 14.9084 2.45393 14.9084 2.64919 14.7131L4.9623 12.4L6.1623 13.6C6.69564 14.1334 7.5623 14.1334 8.02897 13.6L9.54208 12.0869C9.73735 11.8917 9.73735 11.5751 9.54208 11.3798L8.96231 10.8L10.829 8.8667Z" fill="#DB4405"/>
-              </svg>
-            </div>
-            <div class="mapbox_label">Total Wattage: ${ e.features[0].properties['SSPU Total Wattage'] }</div>
-          </div>
-        ` : ''}
         ${ e.features[0].properties['SSPU PUE Appliances'] ? `
           <div class="mapbox_row">
             <div class="icon-embed-xxsmall w-embed">
@@ -513,18 +505,6 @@ function addMapPoints() {
               </svg>
             </div>
             <div class="mapbox_label">Appliances: ${ e.features[0].properties['SSPU PUE Appliances'] }</div>
-          </div>
-        ` : ''}
-        ${ e.features[0].properties['Previous Energy Source'] ? `
-          <div class="mapbox_row">
-            <div class="icon-embed-xxsmall w-embed">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M13.2422 9.93757C13.2422 12.1812 11.4743 14 9.29347 14C7.11265 14 5.34475 12.1812 5.34475 9.93757C5.34475 8.29383 7.46419 4.38615 8.59755 2.41402C8.9148 1.86199 9.67214 1.86199 9.98939 2.41402C11.1228 4.38615 13.2422 8.29383 13.2422 9.93757Z" fill="#DB4405"/>
-                <path d="M6.45175 4.5675C6.13086 3.96392 5.81135 3.4034 5.55987 2.97381C5.33318 2.58672 4.79222 2.58672 4.56553 2.97381C3.75601 4.35667 2.24219 7.09745 2.24219 8.24965C2.24219 9.67275 3.27481 10.8521 4.6242 11.0647C4.54212 10.7031 4.4986 10.3256 4.4986 9.93798C4.4986 9.3718 4.67268 8.70361 4.89606 8.05525C4.95721 7.8773 5.02441 7.6948 5.09658 7.50891C5.296 6.99487 5.5326 6.4559 5.78435 5.92032C5.99727 5.46693 6.22368 5.01126 6.45175 4.5675Z" fill="#DB4405"/>
-                <path d="M6.93129 5.50433C7.45435 6.57321 7.88321 7.63643 7.88321 8.24965C7.88321 9.67388 6.84948 10.8533 5.49872 11.0647C5.39846 10.7071 5.34475 10.3286 5.34475 9.93757C5.34475 8.96333 6.08899 7.19437 6.93129 5.50433Z" fill="#DB4405"/>
-              </svg>
-            </div>
-            <div class="mapbox_label">Previous: ${ e.features[0].properties['Previous Energy Source'] }</div>
           </div>
         ` : ''}
       </div>
@@ -559,11 +539,23 @@ function addMapPoints() {
     
     //find ID of collection item in array
     const description = `
-      <div class="mapbox-header">
-        <div class="text-size-large text-weight-light mapbox-title">${ e.features[0].properties['Name'] }</div>
-        ${ e.features[0].properties['Organization'] ? `<div class="mapbox-organisation">${ e.features[0].properties['Organization'] }</div>`: '' }
-      </div>
       <div class="mapbox_content">
+        <div class="mapbox_row">
+          <div class="text-size-large text-weight-light mapbox-title">${ e.features[0].properties['Name'] }</div>
+          ${ e.features[0].properties['Organization'] ? `<div class="mapbox-organisation">${ e.features[0].properties['Organization'] }</div>`: '' }
+        </div>
+        ${ e.features[0].properties['Previous Energy Source'] ? `
+          <div class="mapbox_row">
+            <div class="icon-embed-xxsmall w-embed">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.2422 9.93757C13.2422 12.1812 11.4743 14 9.29347 14C7.11265 14 5.34475 12.1812 5.34475 9.93757C5.34475 8.29383 7.46419 4.38615 8.59755 2.41402C8.9148 1.86199 9.67214 1.86199 9.98939 2.41402C11.1228 4.38615 13.2422 8.29383 13.2422 9.93757Z" fill="#DB4405"/>
+                <path d="M6.45175 4.5675C6.13086 3.96392 5.81135 3.4034 5.55987 2.97381C5.33318 2.58672 4.79222 2.58672 4.56553 2.97381C3.75601 4.35667 2.24219 7.09745 2.24219 8.24965C2.24219 9.67275 3.27481 10.8521 4.6242 11.0647C4.54212 10.7031 4.4986 10.3256 4.4986 9.93798C4.4986 9.3718 4.67268 8.70361 4.89606 8.05525C4.95721 7.8773 5.02441 7.6948 5.09658 7.50891C5.296 6.99487 5.5326 6.4559 5.78435 5.92032C5.99727 5.46693 6.22368 5.01126 6.45175 4.5675Z" fill="#DB4405"/>
+                <path d="M6.93129 5.50433C7.45435 6.57321 7.88321 7.63643 7.88321 8.24965C7.88321 9.67388 6.84948 10.8533 5.49872 11.0647C5.39846 10.7071 5.34475 10.3286 5.34475 9.93757C5.34475 8.96333 6.08899 7.19437 6.93129 5.50433Z" fill="#DB4405"/>
+              </svg>
+            </div>
+            <div class="mapbox_label">Previous: ${ e.features[0].properties['Previous Energy Source'] }</div>
+          </div>
+        ` : ''}
         ${ e.features[0].properties['Customer Category'] ? `
           <div class="mapbox_row">
             <div class="icon-embed-xxsmall w-embed">
@@ -577,26 +569,6 @@ function addMapPoints() {
             <div class="mapbox_label">Category: ${ e.features[0].properties['Customer Category'] }</div>
           </div>
         ` : ''}
-        ${ e.features[0].properties['Gender'] ? `
-          <div class="mapbox_row">
-            <div class="icon-embed-xxsmall w-embed">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.36321 10.3841C11.4024 10.3841 13.0555 8.73102 13.0555 6.69182C13.0555 4.65261 11.4024 2.99951 9.36321 2.99951C7.324 2.99951 5.6709 4.65261 5.6709 6.69182C5.6709 8.73102 7.324 10.3841 9.36321 10.3841ZM9.36321 10.3841V14.9995M12.1324 12.689H6.59398" stroke="#DB4405" stroke-width="1.75" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div class="mapbox_label">Gender: ${ e.features[0].properties['Gender'] }</div>
-          </div>
-        ` : ''}
-        ${ e.features[0].properties['SSPU Total Wattage'] ? `
-          <div class="mapbox_row">
-            <div class="icon-embed-xxsmall w-embed">
-              <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14.6956 5.00003C15.229 5.53337 15.229 6.40003 14.6956 6.8667L13.1825 8.37981C12.9873 8.57507 12.6707 8.57507 12.4754 8.37981L7.98253 3.88692C7.78726 3.69166 7.78726 3.37507 7.98253 3.17981L9.49564 1.6667C10.029 1.13337 10.8956 1.13337 11.3623 1.6667L12.5623 2.8667L14.2088 1.22025C14.404 1.02499 14.7206 1.02499 14.9159 1.22025L15.1421 1.44648C15.3373 1.64174 15.3373 1.95832 15.1421 2.15359L13.4956 3.80003L14.6956 5.00003ZM10.829 8.8667L9.89564 7.93337L8.02897 9.80003L6.62897 8.40003L8.49564 6.53337L7.5623 5.60003L5.69564 7.4667L5.04878 6.86296C4.85181 6.67912 4.54459 6.68442 4.35407 6.87494L2.82897 8.40003C2.29564 8.93337 2.29564 9.80003 2.82897 10.2667L4.02897 11.4667L1.71586 13.7798C1.5206 13.9751 1.5206 14.2917 1.71586 14.4869L1.94208 14.7131C2.13735 14.9084 2.45393 14.9084 2.64919 14.7131L4.9623 12.4L6.1623 13.6C6.69564 14.1334 7.5623 14.1334 8.02897 13.6L9.54208 12.0869C9.73735 11.8917 9.73735 11.5751 9.54208 11.3798L8.96231 10.8L10.829 8.8667Z" fill="#DB4405"/>
-              </svg>
-            </div>
-            <div class="mapbox_label">Total Wattage: ${ e.features[0].properties['SSPU Total Wattage'] }</div>
-          </div>
-        ` : ''}
         ${ e.features[0].properties['SSPU PUE Appliances'] ? `
           <div class="mapbox_row">
             <div class="icon-embed-xxsmall w-embed">
@@ -605,18 +577,6 @@ function addMapPoints() {
               </svg>
             </div>
             <div class="mapbox_label">Appliances: ${ e.features[0].properties['SSPU PUE Appliances'] }</div>
-          </div>
-        ` : ''}
-        ${ e.features[0].properties['Previous Energy Source'] ? `
-          <div class="mapbox_row">
-            <div class="icon-embed-xxsmall w-embed">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M13.2422 9.93757C13.2422 12.1812 11.4743 14 9.29347 14C7.11265 14 5.34475 12.1812 5.34475 9.93757C5.34475 8.29383 7.46419 4.38615 8.59755 2.41402C8.9148 1.86199 9.67214 1.86199 9.98939 2.41402C11.1228 4.38615 13.2422 8.29383 13.2422 9.93757Z" fill="#DB4405"/>
-                <path d="M6.45175 4.5675C6.13086 3.96392 5.81135 3.4034 5.55987 2.97381C5.33318 2.58672 4.79222 2.58672 4.56553 2.97381C3.75601 4.35667 2.24219 7.09745 2.24219 8.24965C2.24219 9.67275 3.27481 10.8521 4.6242 11.0647C4.54212 10.7031 4.4986 10.3256 4.4986 9.93798C4.4986 9.3718 4.67268 8.70361 4.89606 8.05525C4.95721 7.8773 5.02441 7.6948 5.09658 7.50891C5.296 6.99487 5.5326 6.4559 5.78435 5.92032C5.99727 5.46693 6.22368 5.01126 6.45175 4.5675Z" fill="#DB4405"/>
-                <path d="M6.93129 5.50433C7.45435 6.57321 7.88321 7.63643 7.88321 8.24965C7.88321 9.67388 6.84948 10.8533 5.49872 11.0647C5.39846 10.7071 5.34475 10.3286 5.34475 9.93757C5.34475 8.96333 6.08899 7.19437 6.93129 5.50433Z" fill="#DB4405"/>
-              </svg>
-            </div>
-            <div class="mapbox_label">Previous: ${ e.features[0].properties['Previous Energy Source'] }</div>
           </div>
         ` : ''}
       </div>
