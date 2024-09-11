@@ -107,11 +107,11 @@ function addMapPoints() {
     return point.properties['Project Type'] == "SSPU"
   }).length
 
-  const elImpact = document.querySelector('.map_list')
-  const elMG = elImpact.querySelectorAll('.map_item')[0].querySelector('.map_title-wrapper h3')
-  elMG.innerHTML = miniGridProjectsImpact
-  const elSSPU = elImpact.querySelectorAll('.map_item')[1].querySelector('.map_title-wrapper h3')
-  elSSPU.innerHTML = SSPUImpact
+  // const elImpact = document.querySelector('.map_list')
+  // const elMG = elImpact.querySelectorAll('.map_item')[0].querySelector('.map_title-wrapper h3')
+  // elMG.innerHTML = miniGridProjectsImpact
+  // const elSSPU = elImpact.querySelectorAll('.map_item')[1].querySelector('.map_title-wrapper h3')
+  // elSSPU.innerHTML = SSPUImpact
 
   //set hover popup
   popupCountry = new mapboxgl.Popup({
