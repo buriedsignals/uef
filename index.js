@@ -147,7 +147,7 @@ function addMapPoints() {
       if (mq.matches) {
         zoom = 3.12
       } else {
-        zoom = 2.12
+        zoom = 1.9
       }
 
       map.flyTo({
