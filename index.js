@@ -39,13 +39,12 @@ let map = new mapboxgl.Map({
 
 // Adjust zoom of map for mobile and desktop
 let mq = window.matchMedia("(min-width: 600px)");
-console.log(map)
 if (mq.matches) {
   map.setMinZoom(3.12);
 	map.setZoom(3.12); //set map zoom level for desktop size
 } else {
-  map.setMinZoom(2.12);
-	map.setZoom(2.12); //set map zoom level for mobile size
+  map.setMinZoom(1.9);
+	map.setZoom(1.9); //set map zoom level for mobile size
 }
 
 // Add zoom and rotation controls to the map.
